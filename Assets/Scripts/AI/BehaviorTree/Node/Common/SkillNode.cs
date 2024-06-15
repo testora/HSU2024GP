@@ -13,12 +13,10 @@ public class SkillNode : DecoratorNode
     {
         if (blackboard.skillController.UseSkill(selectedSkillName))
         {
-            Debug.Log("true");
             skillAvailable = true;
         }
         else
         {
-            Debug.Log("false");
             skillAvailable = false;
         }
     }
