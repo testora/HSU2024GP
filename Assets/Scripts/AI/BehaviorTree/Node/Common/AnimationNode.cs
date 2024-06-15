@@ -21,8 +21,13 @@ public class AnimationNode : ActionNode
     [HideInInspector][SerializeField] private bool _boolValue;
     [HideInInspector][SerializeField] private string _trigger;
 
+    private bool _prepare = false;
+
     protected override void OnStart()
     {
+        if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+            _prepare = true;
+
         switch (_nodeType)
         {
             case AnimNodeType.Float:
@@ -46,6 +51,12 @@ public class AnimationNode : ActionNode
 
     protected override State OnUpdate()
     {
+        if (_prepare)
+        {
+            _prepare = blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f;
+            return State.Running;
+        }
+
         if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
             return State.Running;
         else

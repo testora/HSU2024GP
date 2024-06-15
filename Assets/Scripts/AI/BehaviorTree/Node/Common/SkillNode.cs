@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static RepeatNode;
 
 public class SkillNode : DecoratorNode
 {
@@ -14,10 +13,12 @@ public class SkillNode : DecoratorNode
     {
         if (blackboard.skillController.UseSkill(selectedSkillName))
         {
+            Debug.Log("true");
             skillAvailable = true;
         }
         else
         {
+            Debug.Log("false");
             skillAvailable = false;
         }
     }
