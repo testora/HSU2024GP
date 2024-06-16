@@ -7,10 +7,15 @@ public class DashSideNode : ActionNode
     public float dashForce = 20f;
     public float disdiv = 2.5f;
 
+    public AudioClip clip;
+
     private bool prepare = false;
 
     protected override void OnStart()
     {
+        blackboard.audioSource.clip = clip;
+        blackboard.audioSource.Play();
+
         if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             prepare = true;
 

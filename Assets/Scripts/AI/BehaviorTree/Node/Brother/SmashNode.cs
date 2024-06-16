@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SmashNode : ActionNode
 {
+    public AudioClip clip;
+
     private bool prepare = false;
 
     private Quaternion targetRotation;
@@ -11,6 +13,9 @@ public class SmashNode : ActionNode
 
     protected override void OnStart()
     {
+        blackboard.audioSource.clip = clip;
+        blackboard.audioSource.Play();
+
         if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             prepare = true;
 

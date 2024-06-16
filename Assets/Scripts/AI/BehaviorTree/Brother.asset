@@ -17,6 +17,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -42,6 +43,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -50,6 +52,7 @@ MonoBehaviour:
   position: {x: 600, y: 1350.6667}
   dashForce: 20
   disdiv: 2.5
+  clip: {fileID: 8300000, guid: 09d29c8e04619ff46badc88372041a16, type: 3}
 --- !u!114 &-7843660197022344835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +70,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -92,6 +96,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -116,6 +121,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -127,6 +133,7 @@ MonoBehaviour:
   backward: 1
   left: 1
   right: 1
+  clip: {fileID: 8300000, guid: 09d29c8e04619ff46badc88372041a16, type: 3}
 --- !u!114 &-6867816187715724792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +151,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -171,6 +179,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -195,6 +204,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -222,6 +232,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -249,6 +260,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -273,6 +285,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: Phase4
   state: 0
@@ -297,12 +310,14 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 28ce3b1aa6cab434c94418762b711e8d
   position: {x: 750, y: 1350.6667}
+  clip: {fileID: 8300000, guid: fb6814d393952ab498301bc2b220869d, type: 3}
   sprintForce: 40
 --- !u!114 &-5214655646329784051
 MonoBehaviour:
@@ -321,6 +336,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: Phase2
   state: 0
@@ -345,6 +361,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: leapend
   state: 0
@@ -376,17 +393,19 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: b3087dd9937e19b48b61a76bc341da81
-  position: {x: 300.00003, y: 1651.3335}
+  position: {x: 300, y: 1662.8336}
   dashForce: 20
   forward: 1
   backward: 0
   left: 1
   right: 1
+  clip: {fileID: 8300000, guid: 09d29c8e04619ff46badc88372041a16, type: 3}
 --- !u!114 &-4368422615352053048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,12 +423,14 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 4bbe8046bd3463444b88cb675a52b989
   position: {x: 450.00003, y: 1651.3333}
+  clip: {fileID: 8300000, guid: 4122a8acac69c9f45b2baf37d2590c49, type: 3}
 --- !u!114 &-3518700817451141358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,17 +448,19 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 91a4a1d262d86c64caeee027169ba079
-  position: {x: 600.0001, y: 756.66675}
+  position: {x: 600, y: 756.6666}
   dashForce: 20
   forward: 1
   backward: 0
   left: 1
   right: 1
+  clip: {fileID: 8300000, guid: 09d29c8e04619ff46badc88372041a16, type: 3}
 --- !u!114 &-2813736442818718003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +478,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: Phase1
   state: 0
@@ -469,6 +493,31 @@ MonoBehaviour:
   - {fileID: 8595288933563108175}
   - {fileID: -7301311679501668079}
   - {fileID: -5811467783891418615}
+--- !u!114 &-2532735955106537222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56fb6894067b0e418d9447edeea19c3, type: 3}
+  m_Name: AudioClipNode
+  m_EditorClassIdentifier: 
+  blackboard:
+    dynamicFields: []
+    animator: {fileID: 0}
+    rb: {fileID: 0}
+    skillController: {fileID: 0}
+    audioSource: {fileID: 0}
+    owner: {fileID: 0}
+  description: 
+  state: 0
+  started: 0
+  guid: 34f4396c2e76c744b8bb64a7b310fb77
+  position: {x: 300.00006, y: 908}
+  clip: {fileID: 8300000, guid: ab403774e4e195b4b972d65224c6ff1f, type: 3}
 --- !u!114 &-2505487915390714057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +535,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: shockwave
   state: 0
@@ -493,10 +543,12 @@ MonoBehaviour:
   guid: 2db99ec6b6a313b42974db759a207fca
   position: {x: 0, y: 756.6666}
   children:
+  - {fileID: 3610198890641621780}
   - {fileID: 6508516267600989419}
-  - {fileID: 3421833828455310693}
-  - {fileID: -4941665894185208273}
   - {fileID: 7649557605862443927}
+  - {fileID: 3421833828455310693}
+  - {fileID: -2532735955106537222}
+  - {fileID: -4941665894185208273}
 --- !u!114 &-2148343655004162647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +566,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: Phase3
   state: 0
@@ -538,6 +591,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: shockwave
   state: 0
@@ -563,6 +617,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -590,6 +645,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: primary
   state: 0
@@ -637,6 +693,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -664,6 +721,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -690,6 +748,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -725,6 +784,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   nodes:
   - {fileID: -6291790510160461831}
@@ -772,6 +832,8 @@ MonoBehaviour:
   - {fileID: -5811467783891418615}
   - {fileID: 3546857205571084401}
   - {fileID: 7649557605862443927}
+  - {fileID: 3610198890641621780}
+  - {fileID: -2532735955106537222}
 --- !u!114 &364063870455164519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,12 +851,14 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 8915cbeb6b208af489ce9a8017f2b31d
   position: {x: 600, y: 1051.3334}
+  clip: {fileID: 8300000, guid: fb6814d393952ab498301bc2b220869d, type: 3}
   sprintForce: 50
 --- !u!114 &1506033318222752847
 MonoBehaviour:
@@ -813,6 +877,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: melle
   state: 0
@@ -838,6 +903,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -865,12 +931,14 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: f6f0f6ffff959134baf3f86a2bede70b
   position: {x: 450, y: 1350.6667}
+  clip: {fileID: 8300000, guid: 4122a8acac69c9f45b2baf37d2590c49, type: 3}
 --- !u!114 &3421833828455310693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,12 +956,13 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 3
   state: 0
   started: 0
   guid: 58e36c7b3613e3c46bdfad6125aea8fd
-  position: {x: 300.00003, y: 907.3335}
+  position: {x: 150.00003, y: 907.3333}
   duration: 3
 --- !u!114 &3546857205571084401
 MonoBehaviour:
@@ -912,6 +981,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -919,6 +989,31 @@ MonoBehaviour:
   guid: 6edc878ceb45c61469f1ee0141966aaa
   position: {x: 1050, y: 756.6666}
   runPower: 5
+--- !u!114 &3610198890641621780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56fb6894067b0e418d9447edeea19c3, type: 3}
+  m_Name: AudioClipNode
+  m_EditorClassIdentifier: 
+  blackboard:
+    dynamicFields: []
+    animator: {fileID: 0}
+    rb: {fileID: 0}
+    skillController: {fileID: 0}
+    audioSource: {fileID: 0}
+    owner: {fileID: 0}
+  description: 
+  state: 0
+  started: 0
+  guid: 007a5e2be070a0f4cabe33c25e0a3f49
+  position: {x: -299.99997, y: 907.3334}
+  clip: {fileID: 8300000, guid: d71a4f5fa5958e74193cfdfaa529e9a1, type: 3}
 --- !u!114 &4317762155380471510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,6 +1031,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -962,6 +1058,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -988,6 +1085,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1013,6 +1111,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1038,6 +1137,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1065,6 +1165,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: PhaseSelector
   state: 0
@@ -1093,12 +1194,13 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: leapbegin
   state: 0
   started: 0
   guid: 79d8fd2bf337fb24681f25aa95c791f4
-  position: {x: 0, y: 907.3333}
+  position: {x: -150.00002, y: 907.99994}
   _nodeType: 3
   _floatParam: 
   _floatValue: 0
@@ -1124,6 +1226,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1155,12 +1258,13 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 5b0fabf6b0c89b24b824c9862585fe50
-  position: {x: 899.99994, y: 907.3333}
+  position: {x: 900, y: 907.33344}
   runPower: 5
 --- !u!114 &7636199111028715838
 MonoBehaviour:
@@ -1179,6 +1283,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1210,12 +1315,13 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: bb1842da0d303b540ab9864920850485
-  position: {x: 149.99979, y: 908.0001}
+  position: {x: 0.00000667572, y: 907.3333}
   setPosition: {x: 0, y: 0.65, z: 0}
 --- !u!114 &8474021173208050386
 MonoBehaviour:
@@ -1234,6 +1340,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1260,6 +1367,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1287,6 +1395,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: 
   state: 0
@@ -1314,6 +1423,7 @@ MonoBehaviour:
     animator: {fileID: 0}
     rb: {fileID: 0}
     skillController: {fileID: 0}
+    audioSource: {fileID: 0}
     owner: {fileID: 0}
   description: shard
   state: 0

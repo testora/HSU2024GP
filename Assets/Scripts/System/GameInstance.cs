@@ -6,6 +6,7 @@ public class GameInstance : SingletonMonoBehaviour<GameInstance>
 {
     public MonoBehaviour mbCamera;
     public MonoBehaviour mbPlayer;
+    public MonoBehaviour mbBrother;
     public CameraController camController;
 
     static public float minPitch = -90f;
