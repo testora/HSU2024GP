@@ -145,16 +145,18 @@ public class BehaviorTreeView : GraphView
             if (guids.Length > 0)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guids[0]).Replace(basePath, "");
-                evt.menu.AppendAction($"{Path.GetDirectoryName(path)}/{type.BaseType.Name}/{type.Name}", _ => CreateNode(type));
+				Vector2 position = evt.localMousePosition;
+                evt.menu.AppendAction($"{Path.GetDirectoryName(path)}/{type.BaseType.Name}/{type.Name}", _ => CreateNode(type, position));
             }
         }
 
         base.BuildContextualMenu(evt);
     }
 
-	void CreateNode(System.Type type)
+	void CreateNode(System.Type type, Vector2 position)
 	{
 		Node node = _tree.CreateNode(type);
+		node.position = position;
 		CreateNodeView(node);
 	}
 
@@ -162,7 +164,7 @@ public class BehaviorTreeView : GraphView
 	{
 		NodeView nodeView = new NodeView(node);
 		nodeView.onNodeSelected = onNodeSelected;
-		AddElement(nodeView);
+        AddElement(nodeView);
 	}
 
 	public void UpdateNodeStates()

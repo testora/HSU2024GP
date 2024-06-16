@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static RepeatNode;
 
 public class SkillNode : DecoratorNode
 {

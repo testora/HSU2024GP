@@ -6,6 +6,9 @@ public class SelectorNode : CompositeNode
 {
     protected override void OnStart()
     {
+        if (children.Count <= 0)
+            state = State.Failure;
+
         current = 0;
     }
 
@@ -15,6 +18,9 @@ public class SelectorNode : CompositeNode
 
     protected override State OnUpdate()
     {
+        if (children.Count <= 0)
+            return State.Failure;
+
         Node child = children[current];
         switch (child.Update())
         {
