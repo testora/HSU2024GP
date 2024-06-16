@@ -70,6 +70,12 @@ public class PlayerController : MonoBehaviour
         Handle_Bitset();
         Handle_MouseInput();
         Handle_KeyInput();
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Destroy(GameInstance.Instance.mbBrother.GetComponent<BehaviorTreeRunner>());
+            GameInstance.Instance.mbBrother.GetComponent<Animator>().SetTrigger("Death");
+        }
     }
 
     void Handle_Bitset()

@@ -13,6 +13,7 @@ public class Blackboard
     public Animator animator;
     public Rigidbody rb;
     public SkillController skillController;
+    public AudioSource audioSource;
 
     public MonoBehaviour owner;
 
@@ -24,6 +25,7 @@ public class Blackboard
         animator = monoBehaviour.GetComponent<Animator>();
         rb = monoBehaviour.GetComponent<Rigidbody>();
         skillController = monoBehaviour.GetComponent<SkillController>();
+        audioSource = monoBehaviour.GetComponent<AudioSource>();
     }
 
     private void InitializeDictionary()

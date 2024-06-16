@@ -16,16 +16,24 @@ public class DashNode : ActionNode
     public bool left = false;
     public bool right = false;
 
+    public AudioClip clip;
+
     private bool prepare = false;
 
     List<DashDirection> directionList = new List<DashDirection>();
     DashDirection direction = DashDirection.FORWARD;
 
-
     protected override void OnStart()
     {
+        blackboard.audioSource.clip = clip;
+        blackboard.audioSource.Play();
+
         if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             prepare = true;
+
+        Vector3 player = GameInstance.Instance.mbPlayer.transform.position;
+        player.y = blackboard.owner.transform.position.y;
+        blackboard.owner.transform.LookAt(player);
 
         directionList.Clear();
         if (forward) directionList.Add(DashDirection.FORWARD);

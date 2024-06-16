@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SmashNode : ActionNode
 {
+    public AudioClip clip;
+
     private bool prepare = false;
 
     private Quaternion targetRotation;
@@ -11,9 +13,15 @@ public class SmashNode : ActionNode
 
     protected override void OnStart()
     {
+        blackboard.audioSource.clip = clip;
+        blackboard.audioSource.Play();
+
         if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             prepare = true;
 
+        Vector3 player = GameInstance.Instance.mbPlayer.transform.position;
+        player.y = blackboard.owner.transform.position.y;
+        blackboard.owner.transform.LookAt(player);
     }
 
     protected override void OnStop()
@@ -25,14 +33,6 @@ public class SmashNode : ActionNode
         if (prepare)
         {
             blackboard.animator.SetTrigger("SmashForward");
-
-            Vector3 lookGoal = blackboard.owner.transform.position - GameInstance.Instance.mbPlayer.transform.position;
-            lookGoal.y = 0f;
-            Quaternion quat = Quaternion.FromToRotation(blackboard.owner.transform.forward, lookGoal);
-            targetRotation = quat * blackboard.owner.transform.rotation;
-            blackboard.owner.transform.rotation = Quaternion.Slerp(blackboard.owner.transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            quat.ToAngleAxis(out float angle, out Vector3 axis);
-            GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
 
             prepare = blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f;
             return State.Running;
