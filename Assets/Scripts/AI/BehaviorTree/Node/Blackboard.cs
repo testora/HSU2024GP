@@ -13,14 +13,10 @@ public class Blackboard
     public Animator animator;
     public SkillController skillController;
 
-    public GameObject target;
-    public MonoBehaviour owner;
-
     public void Initialize(MonoBehaviour monoBehaviour)
     {
         InitializeDictionary();
 
-        owner = monoBehaviour;
         animator = monoBehaviour.GetComponent<Animator>();
         skillController = monoBehaviour.GetComponent<SkillController>();
     }

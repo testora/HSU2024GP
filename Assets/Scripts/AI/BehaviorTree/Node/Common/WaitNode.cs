@@ -21,9 +21,9 @@ public class WaitNode : ActionNode
 	{
 		if (Time.time - enterTime < duration)
 		{
-			return State.Running;
+			return State.Success;
 		}
-
-		return State.Success;
+	 
+		return State.Running;
 	}
 }
