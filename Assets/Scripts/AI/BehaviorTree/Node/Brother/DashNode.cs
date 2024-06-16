@@ -27,6 +27,10 @@ public class DashNode : ActionNode
         if (blackboard.animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
             prepare = true;
 
+        Vector3 player = GameInstance.Instance.mbPlayer.transform.position;
+        player.y = blackboard.owner.transform.position.y;
+        blackboard.owner.transform.LookAt(player);
+
         directionList.Clear();
         if (forward) directionList.Add(DashDirection.FORWARD);
         if (backward) directionList.Add(DashDirection.BACKWARD);

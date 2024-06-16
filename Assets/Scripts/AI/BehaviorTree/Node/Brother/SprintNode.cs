@@ -21,6 +21,7 @@ public class SprintNode : ActionNode
         Vector3 player = GameInstance.Instance.mbPlayer.transform.position;
         player.y = blackboard.owner.transform.position.y;
         blackboard.owner.transform.LookAt(player);
+
         blackboard.animator.SetTrigger("SprintForward");
         blackboard.rb.AddForce(blackboard.owner.transform.forward * sprintPower, ForceMode.Acceleration);
 

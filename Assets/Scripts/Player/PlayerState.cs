@@ -56,18 +56,18 @@ public class PlayerState : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer.Equals(6))
-        {
-            SetState(RG_STATE.AIR, false);
-            animator.SetBool("AirLoopUp", false);
-        }
+    //  if (collision.gameObject.layer.Equals(6))
+    //  {
+    //      SetState(RG_STATE.AIR, false);
+    //      animator.SetBool("AirLoopUp", false);
+    //  }
     }
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.layer.Equals(6))
-        {
-            SetState(RG_STATE.AIR);
-            animator.SetBool("AirLoopUp", true);
-        }
+    //  if (collision.gameObject.layer.Equals(6))
+    //  {
+    //      SetState(RG_STATE.AIR);
+    //      animator.SetBool("AirLoopUp", true);
+    //  }
     }
 }

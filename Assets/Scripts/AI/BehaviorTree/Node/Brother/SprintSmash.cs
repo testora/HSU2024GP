@@ -17,6 +17,7 @@ public class SprintSmash : ActionNode
         player.y = blackboard.owner.transform.position.y;
         blackboard.owner.transform.LookAt(player);
 
+        blackboard.animator.SetTrigger("SprintSmash");
         blackboard.rb.AddForce(blackboard.owner.transform.forward * sprintForce, ForceMode.VelocityChange);
     }
 

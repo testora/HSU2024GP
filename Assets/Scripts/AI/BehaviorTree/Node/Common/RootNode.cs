@@ -8,6 +8,7 @@ public class RootNode : Node
 
     protected override void OnStart()
     {
+        blackboard.animator.speed = 2f;
     }
 
     protected override void OnStop()
