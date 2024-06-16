@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RangeNode : DecoratorNode
 {
+    public float range = 0f;
+    public bool inRange = false;
+    public bool checkOnce = false;
+
+    bool success = false;
+
     protected override void OnStart()
     {
+        float distance = (blackboard.owner.transform.position - GameInstance.Instance.mbPlayer.transform.position).magnitude;
+        success = inRange ? range < distance : range >= distance;
     }
 
     protected override void OnStop()
@@ -14,6 +23,17 @@ public class RangeNode : DecoratorNode
 
     protected override State OnUpdate()
     {
-        return State.Running;
+        if (!checkOnce)
+        {
+            float distance = (blackboard.owner.transform.position - GameInstance.Instance.mbPlayer.transform.position).magnitude;
+            success = inRange ? range < distance : range >= distance;
+        }
+
+        if (success)
+        {
+            return child.Update();
+        }
+
+        return State.Failure;
     }
 }
