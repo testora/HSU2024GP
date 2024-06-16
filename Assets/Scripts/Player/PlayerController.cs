@@ -33,9 +33,20 @@ public class PlayerController : MonoBehaviour
     private uint bitDirection = 0;
     private PlayerState playerState;
 
+    Animator animator;
+    AnimatorStateInfo aimPitchState;
+    AnimatorStateInfo aimYawState;
+
+    public float a;
+    public float b;
+
     void Start()
     {
         playerState = GetComponent<PlayerState>();
+
+        animator = GetComponent<Animator>();
+        aimPitchState = GetComponent<Animator>().GetNextAnimatorStateInfo(1);
+        aimYawState = GetComponent<Animator>().GetNextAnimatorStateInfo(2);
     }
 
     void Update()
@@ -44,6 +55,7 @@ public class PlayerController : MonoBehaviour
     //  float moveVertical = Input.GetAxis("Vertical");
 
         Handle_Bitset();
+        Handle_MouseInput();
     }
 
     void Handle_Bitset()
@@ -65,6 +77,19 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyUp(KeyCode.D))
             SetDirection(Direction.BITMASK_RIGHT, false);
     }
+
+    void Handle_MouseInput()
+    {
+        Vector3 camLook = GameInstance.Instance.mbCamera.transform.forward.normalized;
+        float pitch = Mathf.Atan2(camLook.y, Mathf.Sqrt(Mathf.Pow(camLook.x, 2f) + Mathf.Pow(camLook.z, 2f)));
+        float yaw = 0.5f * (Vector3.Dot(transform.right.normalized, camLook) + 1f);
+        pitch = Mathf.Clamp(Utility.ProportionalRatio(pitch, GameInstance.minRadPitch * .5f, GameInstance.maxRadPitch * .5f), 0f, 1f);
+
+        animator.SetLayerWeight(1, 2f * Mathf.Abs(0.5f - pitch));
+        animator.SetLayerWeight(2, 2f * Mathf.Abs(0.5f - yaw));
+        animator.Play(aimPitchState.fullPathHash, 1, pitch);
+        animator.Play(aimYawState.fullPathHash, 2, yaw);
+    }    
 
     void Handle_KeyInput()
     {
