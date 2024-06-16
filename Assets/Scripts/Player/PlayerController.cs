@@ -18,7 +18,7 @@ public enum DIRECTION
     MAX = 1 << 4       // 16
 }
 
-public static class Direction
+public static class BitDirection
 {
     public const uint BITMASK_FORWARD = (uint)DIRECTION.FORWARD;
     public const uint BITMASK_BACKWARD = (uint)DIRECTION.BACKWARD;
@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
         aimPitchState = GetComponent<Animator>().GetNextAnimatorStateInfo(1);
         aimYawState = GetComponent<Animator>().GetNextAnimatorStateInfo(2);
 
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         rb.inertiaTensor = rb.inertiaTensor;
         rb.inertiaTensorRotation = rb.inertiaTensorRotation;
     }
@@ -71,40 +70,26 @@ public class PlayerController : MonoBehaviour
         Handle_Bitset();
         Handle_MouseInput();
         Handle_KeyInput();
-
-//        if (Input.GetKeyDown(KeyCode.A))
-//        {
-//
-//            Debug.Log("0 " + transform.forward);
-//            Debug.Log("1 " + transform.position);
-//            Debug.Log("2 " + GameInstance.Instance.mbCamera.transform.forward);
-//                transform.LookAt(transform.position + GameInstance.Instance.mbCamera.transform.forward);
-//         //   transform.LookAt(transform.position - GameInstance.Instance.mbCamera.transform.right);
-//            Debug.Log("3 " + transform.forward);
-//            Debug.Log("4 " + transform.up);
-//            transform.up = Vector3.up;
-//            Debug.Log("5 " + transform.forward);
-//        }
     }
 
     void Handle_Bitset()
     {
         if (Input.GetKeyDown(KeyCode.W))
-            SetDirection(Direction.BITMASK_FORWARD);
+            SetDirection(BitDirection.BITMASK_FORWARD);
         else if (Input.GetKeyUp(KeyCode.W))
-            SetDirection(Direction.BITMASK_FORWARD, false);
+            SetDirection(BitDirection.BITMASK_FORWARD, false);
         if (Input.GetKeyDown(KeyCode.A))
-            SetDirection(Direction.BITMASK_LEFT);
+            SetDirection(BitDirection.BITMASK_LEFT);
         else if (Input.GetKeyUp(KeyCode.A))
-            SetDirection(Direction.BITMASK_LEFT, false);
+            SetDirection(BitDirection.BITMASK_LEFT, false);
         if (Input.GetKeyDown(KeyCode.S))
-            SetDirection(Direction.BITMASK_BACKWARD);
+            SetDirection(BitDirection.BITMASK_BACKWARD);
         else if (Input.GetKeyUp(KeyCode.S))
-            SetDirection(Direction.BITMASK_BACKWARD, false);
+            SetDirection(BitDirection.BITMASK_BACKWARD, false);
         if (Input.GetKeyDown(KeyCode.D))
-            SetDirection(Direction.BITMASK_RIGHT);
+            SetDirection(BitDirection.BITMASK_RIGHT);
         else if (Input.GetKeyUp(KeyCode.D))
-            SetDirection(Direction.BITMASK_RIGHT, false);
+            SetDirection(BitDirection.BITMASK_RIGHT, false);
     }
 
     void Handle_MouseInput()
@@ -124,7 +109,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerState.SetState(RG_STATE.AIR);
             rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
         }
 
@@ -134,7 +118,7 @@ public class PlayerController : MonoBehaviour
 
         switch (bitDirection)
         {
-            case Direction.BITMASK_FORWARD:
+            case BitDirection.BITMASK_FORWARD:
             {
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                     playerState.SetState(RG_STATE.SPRINT);
@@ -153,7 +137,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetTrigger(isSprint ? "SprintForward" : "RunForward");
             }
             break;
-            case Direction.BITMASK_BACKWARD:
+            case BitDirection.BITMASK_BACKWARD:
             {
                 Vector3 look = GameInstance.Instance.mbCamera.transform.forward * (isAim ? 1f : -1f);
                 look.y = 0f;
@@ -163,13 +147,13 @@ public class PlayerController : MonoBehaviour
                 quat.ToAngleAxis(out float angle, out Vector3 axis);
                 GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
 
-                rb.AddForce(moveSpeed * transform.forward * (isAim ? 1f : -1f), ForceMode.Acceleration);
+                rb.AddForce(moveSpeed * transform.forward * (isAim ? -1f : 1f), ForceMode.Acceleration);
 
                 if (!isAir)
                     animator.SetTrigger(isAim ? "RunBackward" : "RunForward");
             }
             break;
-            case Direction.BITMASK_LEFT:
+            case BitDirection.BITMASK_LEFT:
             {
                 Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : -GameInstance.Instance.mbCamera.transform.right);
                 look.y = 0f;
@@ -185,7 +169,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetTrigger(isSprint ? "SprintLeft" : isAim ? "RunLeft" : "RunForward");
             }
             break;
-            case Direction.BITMASK_RIGHT:
+            case BitDirection.BITMASK_RIGHT:
             {
                 Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : GameInstance.Instance.mbCamera.transform.right);
                 look.y = 0f;
@@ -201,7 +185,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetTrigger(isSprint ? "SprintRight" : isAim ? "RunRight" : "RunForward");
             }
             break;
-            case Direction.BITMASK_FORWARDLEFT:
+            case BitDirection.BITMASK_FORWARDLEFT:
             {
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                     playerState.SetState(RG_STATE.SPRINT);
@@ -221,7 +205,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetTrigger(isSprint ? "SprintLeft" : isAim ? "RunLeft" : "RunForward");
             }
             break;
-            case Direction.BITMASK_FORWARDRIGHT:
+            case BitDirection.BITMASK_FORWARDRIGHT:
             {
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                     playerState.SetState(RG_STATE.SPRINT);
@@ -241,7 +225,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetTrigger(isSprint ? "SprintRight" : isAim ? "RunRight" : "RunForward");
             }
             break;
-            case Direction.BITMASK_BACKWARDLEFT:
+            case BitDirection.BITMASK_BACKWARDLEFT:
             {
                 Vector3 dir = (-GameInstance.Instance.mbCamera.transform.forward - GameInstance.Instance.mbCamera.transform.right).normalized;
                 Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : dir);
@@ -258,7 +242,7 @@ public class PlayerController : MonoBehaviour
                     animator.SetTrigger(isSprint ? "SprintLeft" : isAim ? "RunLeft" : "RunForward");
             }
             break;
-            case Direction.BITMASK_BACKWARDRIGHT:
+            case BitDirection.BITMASK_BACKWARDRIGHT:
             {
                 Vector3 dir = (-GameInstance.Instance.mbCamera.transform.forward + GameInstance.Instance.mbCamera.transform.right).normalized;
                 Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : dir);

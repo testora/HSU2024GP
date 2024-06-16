@@ -11,13 +11,18 @@ public class Blackboard
     private Dictionary<string, object> _blackboardDictionary = new Dictionary<string, object>();
     
     public Animator animator;
+    public Rigidbody rb;
     public SkillController skillController;
+
+    public MonoBehaviour owner;
 
     public void Initialize(MonoBehaviour monoBehaviour)
     {
         InitializeDictionary();
 
+        owner = monoBehaviour;
         animator = monoBehaviour.GetComponent<Animator>();
+        rb = monoBehaviour.GetComponent<Rigidbody>();
         skillController = monoBehaviour.GetComponent<SkillController>();
     }
 

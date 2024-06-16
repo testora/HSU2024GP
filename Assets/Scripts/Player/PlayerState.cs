@@ -24,6 +24,9 @@ public class PlayerState : MonoBehaviour
 {
     private uint bitState = 0;
 
+    Animator animator;
+    Rigidbody rb;
+
     public void SetState(RG_STATE state, bool value = true)
     {
         if (value)
@@ -35,5 +38,36 @@ public class PlayerState : MonoBehaviour
     public bool IsState(RG_STATE state)
     {
         return (bitState & (uint)state) != 0;
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (IsState(RG_STATE.AIR))
+        {
+        }
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer.Equals(6))
+        {
+            SetState(RG_STATE.AIR, false);
+            animator.SetBool("AirLoopUp", false);
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer.Equals(6))
+        {
+            SetState(RG_STATE.AIR);
+            animator.SetBool("AirLoopUp", true);
+        }
     }
 }
