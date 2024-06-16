@@ -34,6 +34,7 @@ public static class Direction
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 100f;
+    public float jumpPower = 100f;
 
     private uint bitDirection = 0;
     private PlayerState playerState;
@@ -121,6 +122,12 @@ public class PlayerController : MonoBehaviour
 
     void Handle_KeyInput()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerState.SetState(RG_STATE.AIR);
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
+        }
+
         bool isAir = playerState.IsState(RG_STATE.AIR);
         bool isAim = playerState.IsState(RG_STATE.AIM);
         bool isSprint = playerState.IsState(RG_STATE.SPRINT);
