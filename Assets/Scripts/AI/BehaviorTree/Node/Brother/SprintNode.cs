@@ -7,8 +7,6 @@ public class SprintNode : ActionNode
 {
     public float sprintPower = 10f;
 
-    Animator animator;
-    Rigidbody rb;
 
     protected override void OnStart()
     {
@@ -23,8 +21,8 @@ public class SprintNode : ActionNode
         Vector3 player = GameInstance.Instance.mbPlayer.transform.position;
         player.y = blackboard.owner.transform.position.y;
         blackboard.owner.transform.LookAt(player);
-        animator.SetTrigger("SprintForward");
-        rb.AddForce(blackboard.owner.transform.forward * sprintPower, ForceMode.VelocityChange);
+        blackboard.animator.SetTrigger("SprintForward");
+        blackboard.rb.AddForce(blackboard.owner.transform.forward * sprintPower, ForceMode.Acceleration);
 
         return State.Running;
     }

@@ -70,20 +70,6 @@ public class PlayerController : MonoBehaviour
         Handle_Bitset();
         Handle_MouseInput();
         Handle_KeyInput();
-
-//        if (Input.GetKeyDown(KeyCode.A))
-//        {
-//
-//            Debug.Log("0 " + transform.forward);
-//            Debug.Log("1 " + transform.position);
-//            Debug.Log("2 " + GameInstance.Instance.mbCamera.transform.forward);
-//                transform.LookAt(transform.position + GameInstance.Instance.mbCamera.transform.forward);
-//         //   transform.LookAt(transform.position - GameInstance.Instance.mbCamera.transform.right);
-//            Debug.Log("3 " + transform.forward);
-//            Debug.Log("4 " + transform.up);
-//            transform.up = Vector3.up;
-//            Debug.Log("5 " + transform.forward);
-//        }
     }
 
     void Handle_Bitset()
@@ -161,7 +147,7 @@ public class PlayerController : MonoBehaviour
                 quat.ToAngleAxis(out float angle, out Vector3 axis);
                 GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
 
-                rb.AddForce(moveSpeed * transform.forward * (isAim ? 1f : -1f), ForceMode.Acceleration);
+                rb.AddForce(moveSpeed * transform.forward * (isAim ? -1f : 1f), ForceMode.Acceleration);
 
                 if (!isAir)
                     animator.SetTrigger(isAim ? "RunBackward" : "RunForward");
