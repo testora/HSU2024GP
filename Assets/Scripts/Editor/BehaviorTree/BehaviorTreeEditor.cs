@@ -21,6 +21,7 @@ public class BehaviorTreeEditor : EditorWindow
     {
         BehaviorTreeEditor wnd = GetWindow<BehaviorTreeEditor>();
         wnd.titleContent = new GUIContent("BehaviorTreeEditor");
+        wnd.OnSelectionChange();
     }
 
     [OnOpenAsset]
@@ -102,16 +103,13 @@ public class BehaviorTreeEditor : EditorWindow
             }
         }
 
-        if (Application.isPlaying)
+        if (tree && _treeView != null)
         {
-            if (tree)
+            if (Application.isPlaying)
             {
                 _treeView.PopulateView(tree);
             }
-        }
-        else
-        {
-            if (tree && AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
+            else if (AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
             {
                 _treeView.PopulateView(tree);
             }
@@ -213,10 +211,13 @@ public class BehaviorTreeEditor : EditorWindow
     {
         if (_treeObject == null || _blackboardProperty == null || _variableList == null)
             return;
+        if (!_treeObject.targetObject)
+            return;
 
         _treeObject.Update();
     //  EditorGUILayout.PropertyField(_blackboardProperty.FindPropertyRelative("animator"));
     //  EditorGUILayout.PropertyField(_blackboardProperty.FindPropertyRelative("skillController"));
+        EditorGUILayout.PropertyField(_blackboardProperty.FindPropertyRelative("target"));
         _variableList.DoLayoutList();
         _treeObject.ApplyModifiedProperties();
     }
