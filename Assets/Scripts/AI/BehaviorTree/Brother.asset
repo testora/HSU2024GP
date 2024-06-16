@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7741391684844878054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ac5694e629229d4ab0a5d034d4776bf, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  blackboard:
+    dynamicFields: []
+    animator: {fileID: 0}
+    skillController: {fileID: 0}
+  description: 
+  state: 0
+  started: 0
+  guid: 58cbfd978aa83474e9ae10fab2a8d799
+  position: {x: 0, y: 768.6666}
+  _nodeType: 3
+  _floatParam: 
+  _floatValue: 0
+  _intParam: 
+  _intValue: 0
+  _boolParam: 
+  _boolValue: 0
+  _trigger: LeapBegin
+--- !u!114 &-7735216748213131006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a43400bc1deb743afc06f125ae490c, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  blackboard:
+    dynamicFields: []
+    animator: {fileID: 0}
+    skillController: {fileID: 0}
+  description: 
+  state: 0
+  started: 0
+  guid: f2500fcf06300af4d8bbfcd856deb15b
+  position: {x: 149.99995, y: 768.6667}
+  duration: 3
 --- !u!114 &-6291790510160461831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,14 +67,12 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: b5c6e4b0b985759419500347cdb5d93f
   position: {x: -0.00002861023, y: 0.0000013987228}
-  child: {fileID: 5733422941878453304}
+  child: {fileID: 7655641293352319045}
 --- !u!114 &-5520214719609650823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,13 +89,11 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: Phase4
   state: 0
   started: 0
   guid: 79f2d9b323e85ab4991b3388ac7de576
-  position: {x: 450, y: 455.33334}
+  position: {x: 450, y: 299.80005}
   children: []
 --- !u!114 &-5214655646329784051
 MonoBehaviour:
@@ -64,45 +111,12 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: Phase2
   state: 0
   started: 0
   guid: 20f0c8789f8e82d42bdca57f9ba13db8
-  position: {x: 150, y: 455.33334}
+  position: {x: 150.00002, y: 299.80005}
   children: []
---- !u!114 &-4941665894185208273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac5694e629229d4ab0a5d034d4776bf, type: 3}
-  m_Name: AnimationNode
-  m_EditorClassIdentifier: 
-  blackboard:
-    dynamicFields: []
-    animator: {fileID: 0}
-    skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
-  description: 
-  state: 0
-  started: 0
-  guid: 6355045a670cfd94eadec02f6294390d
-  position: {x: 300, y: 907.3333}
-  _nodeType: 3
-  _floatParam: 
-  _floatValue: 0
-  _intParam: 
-  _intValue: 0
-  _boolParam: 
-  _boolValue: 0
-  _trigger: LeapEnd
 --- !u!114 &-2813736442818718003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,13 +133,11 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: Phase1
   state: 0
   started: 0
   guid: ff7fac74310cd6141a70e8d1f3d58502
-  position: {x: 0, y: 455.33334}
+  position: {x: 0, y: 300}
   children:
   - {fileID: -2085210638077680662}
 --- !u!114 &-2505487915390714057
@@ -144,17 +156,15 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 2db99ec6b6a313b42974db759a207fca
-  position: {x: 0, y: 756.6666}
+  position: {x: -0.00004062653, y: 601.0334}
   children:
-  - {fileID: 6508516267600989419}
-  - {fileID: 3421833828455310693}
-  - {fileID: -4941665894185208273}
+  - {fileID: -7741391684844878054}
+  - {fileID: -7735216748213131006}
+  - {fileID: 4983733596861769359}
 --- !u!114 &-2148343655004162647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,13 +181,11 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: Phase3
   state: 0
   started: 0
   guid: 49f1a621f89533e4abc60e11e42747a6
-  position: {x: 300, y: 455.33334}
+  position: {x: 300.00003, y: 299.80005}
   children: []
 --- !u!114 &-2085210638077680662
 MonoBehaviour:
@@ -195,15 +203,13 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: 
   state: 0
   started: 0
   guid: 4d7df262b4cd5af49b0d8a5dc0edb3d9
-  position: {x: 0, y: 605.3333}
+  position: {x: 0.000029563904, y: 450.00003}
   child: {fileID: -2505487915390714057}
-  selectedSkillName: SPECIAL:SHOCKWAVE
+  selectedSkillName: PRIMARY:MELEE
 --- !u!114 &-1703112069916578763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,8 +255,6 @@ MonoBehaviour:
       boolValue: 0
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 919132149155446097, guid: 1235f4d491925b644bbc19f1903463ff, type: 3}
-    owner: {fileID: 0}
   nodes:
   - {fileID: -6291790510160461831}
   - {fileID: 6425910438339341401}
@@ -260,11 +264,11 @@ MonoBehaviour:
   - {fileID: -5520214719609650823}
   - {fileID: -2085210638077680662}
   - {fileID: -2505487915390714057}
-  - {fileID: -4941665894185208273}
-  - {fileID: 6508516267600989419}
-  - {fileID: 3421833828455310693}
-  - {fileID: 5733422941878453304}
---- !u!114 &3421833828455310693
+  - {fileID: -7741391684844878054}
+  - {fileID: 4983733596861769359}
+  - {fileID: -7735216748213131006}
+  - {fileID: 7655641293352319045}
+--- !u!114 &4983733596861769359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,48 +277,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4a43400bc1deb743afc06f125ae490c, type: 3}
-  m_Name: WaitNode
+  m_Script: {fileID: 11500000, guid: 9ac5694e629229d4ab0a5d034d4776bf, type: 3}
+  m_Name: AnimationNode
   m_EditorClassIdentifier: 
   blackboard:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: 
   state: 0
   started: 0
-  guid: 58e36c7b3613e3c46bdfad6125aea8fd
-  position: {x: 150, y: 908}
-  duration: 1
---- !u!114 &5733422941878453304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7080ba0f2be959b439abd704e43f5860, type: 3}
-  m_Name: RepeatNode
-  m_EditorClassIdentifier: 
-  blackboard:
-    dynamicFields: []
-    animator: {fileID: 0}
-    skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
-  description: 
-  state: 0
-  started: 0
-  guid: 5388e27dd5cdcbb4699d434b8a6f2c6b
-  position: {x: 0, y: 152}
-  child: {fileID: 6425910438339341401}
-  _repeatType: 0
-  _count: 1
-  _duration: 1
+  guid: a5ba2d85022342d489c79c7cf998e8c7
+  position: {x: 300, y: 769.3333}
+  _nodeType: 3
+  _floatParam: 
+  _floatValue: 0
+  _intParam: 
+  _intValue: 0
+  _boolParam: 
+  _boolValue: 0
+  _trigger: LeapEnd
 --- !u!114 &6425910438339341401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,49 +313,16 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: PhaseSelector
   state: 0
   started: 0
   guid: 4d92463682e1ec04fa361c5d34843b27
-  position: {x: 0, y: 304.6667}
+  position: {x: -0.000005681606, y: 149.33331}
   children:
   - {fileID: -2813736442818718003}
   - {fileID: -5214655646329784051}
   - {fileID: -2148343655004162647}
   - {fileID: -5520214719609650823}
---- !u!114 &6508516267600989419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ac5694e629229d4ab0a5d034d4776bf, type: 3}
-  m_Name: AnimationNode
-  m_EditorClassIdentifier: 
-  blackboard:
-    dynamicFields: []
-    animator: {fileID: 0}
-    skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
-  description: 
-  state: 0
-  started: 0
-  guid: 79d8fd2bf337fb24681f25aa95c791f4
-  position: {x: 0, y: 907.3333}
-  _nodeType: 3
-  _floatParam: 
-  _floatValue: 0
-  _intParam: 
-  _intValue: 0
-  _boolParam: 
-  _boolValue: 0
-  _trigger: LeapBegin
 --- !u!114 &6932623802342982620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +339,6 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: 
   state: 0
   started: 0
@@ -421,8 +368,6 @@ MonoBehaviour:
     dynamicFields: []
     animator: {fileID: 0}
     skillController: {fileID: 0}
-    target: {fileID: 0}
-    owner: {fileID: 0}
   description: 
   state: 0
   started: 0
@@ -436,3 +381,25 @@ MonoBehaviour:
   _boolParam: 
   _boolValue: 0
   _trigger: 
+--- !u!114 &7655641293352319045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56bae11d5edf81479390f7869c3893e, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  blackboard:
+    dynamicFields: []
+    animator: {fileID: 0}
+    skillController: {fileID: 0}
+  description: 
+  state: 0
+  started: 0
+  guid: 7406b330bcfa77a4b99e44f4197e6440
+  position: {x: -229.33331, y: 149.33333}
+  message: 
