@@ -58,7 +58,6 @@ public class PlayerController : MonoBehaviour
         aimPitchState = GetComponent<Animator>().GetNextAnimatorStateInfo(1);
         aimYawState = GetComponent<Animator>().GetNextAnimatorStateInfo(2);
 
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         rb.inertiaTensor = rb.inertiaTensor;
         rb.inertiaTensorRotation = rb.inertiaTensorRotation;
     }
@@ -124,7 +123,6 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerState.SetState(RG_STATE.AIR);
             rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
         }
 
