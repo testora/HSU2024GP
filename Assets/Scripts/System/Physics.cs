@@ -33,12 +33,12 @@ public class Physics : MonoBehaviour
             _velocity = Vector3.zero;
     }
 
-    void Force(Vector3 force)
+    public void Force(Vector3 force)
     {
         _velocity += force;
     }
 
-    void Flattern(bool x, bool y, bool z)
+    public void Flattern(bool x, bool y, bool z)
     {
         if (x) _velocity.x = 0f;
         if (y) _velocity.y = 0f;

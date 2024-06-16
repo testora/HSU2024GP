@@ -43,4 +43,9 @@ public class CameraController : MonoBehaviour
         else
             transform.position = parent.position + rayDir * pivotDistance;
     }
+
+    public void RotateAround(Vector3 axis, float angle)
+    {
+        transform.RotateAround(parent.position, axis, angle);
+    }
 }

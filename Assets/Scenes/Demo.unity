@@ -141,8 +141,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9a42e5c3d7cef4b8969668c893e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
---- !u!54 &76327378
+  moveSpeed: 1
+--- !u!136 &76327379
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76327375}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Height: 0.02
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &76327381
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76327375}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85c15f39aa7262b4c815dfb99919e21d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &76327382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76327375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06cc86da84105154ab5fd0c3392bc76d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &76327383
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,8 +223,14 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!4 &255336518 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -31835259489732456, guid: 73ea106b9d905a04fb6ae75897ee147d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1987255903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +243,6 @@ GameObject:
   - component: {fileID: 330585545}
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
-  - component: {fileID: 330585548}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -257,8 +318,8 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.002646666, z: 0}
-  m_LocalScale: {x: 0.033333335, y: 0.033333335, z: 0.033333335}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1561483173}
@@ -307,18 +368,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &330585548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a457694a175164f85c1b11efc03199, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +600,111 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &778698763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778698767}
+  - component: {fileID: 778698766}
+  - component: {fileID: 778698765}
+  - component: {fileID: 778698764}
+  m_Layer: 0
+  m_Name: Sphere (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &778698764
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778698763}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &778698765
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778698763}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &778698766
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778698763}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &778698767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778698763}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.12150001, y: 0.48999977, z: 0.0474}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.05}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1751811514}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,12 +754,401 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &844326798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844326800}
+  - component: {fileID: 844326799}
+  m_Layer: 0
+  m_Name: GameInstance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &844326799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844326798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f555a0cde2df1b646a7124fec1970d0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
+  mbCamera: {fileID: 330585547}
+  mbPlayer: {fileID: 0}
+--- !u!4 &844326800
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844326798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1502367887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502367891}
+  - component: {fileID: 1502367890}
+  - component: {fileID: 1502367889}
+  - component: {fileID: 1502367888}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1502367888
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502367887}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1502367889
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502367887}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1502367890
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502367887}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1502367891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502367887}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.48999977, z: 0}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.05}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1751811514}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1561483172 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7918540941379988412, guid: 73ea106b9d905a04fb6ae75897ee147d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1987255903}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1561483173 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7230116838300416340, guid: 73ea106b9d905a04fb6ae75897ee147d,
     type: 3}
   m_PrefabInstance: {fileID: 1987255903}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1561483174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561483172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08a457694a175164f85c1b11efc03199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 255336518}
+  sensitivity: 500
+  cameraCollision:
+    serializedVersion: 2
+    m_Bits: 64
+  hideCursor: 1
+--- !u!1 &1751811510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1751811514}
+  - component: {fileID: 1751811513}
+  - component: {fileID: 1751811512}
+  - component: {fileID: 1751811511}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!65 &1751811511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751811510}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1751811512
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751811510}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1751811513
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751811510}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1751811514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751811510}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalScale: {x: 20, y: 1, z: 20}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1502367891}
+  - {fileID: 778698767}
+  - {fileID: 1753712861}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1753712857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753712861}
+  - component: {fileID: 1753712860}
+  - component: {fileID: 1753712859}
+  - component: {fileID: 1753712858}
+  m_Layer: 0
+  m_Name: Sphere (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1753712858
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753712857}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1753712859
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753712857}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1753712860
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753712857}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1753712861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753712857}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0468, y: 0.48999977, z: -0.068150006}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.05}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1751811514}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1987255903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -684,6 +1227,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.05
       objectReference: {fileID: 0}
+    - target: {fileID: -3395425058113142951, guid: 73ea106b9d905a04fb6ae75897ee147d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -31835259489732456, guid: 73ea106b9d905a04fb6ae75897ee147d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -725,7 +1273,8 @@ PrefabInstance:
       value: RailgunnerBody
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -434094073823293607, guid: 73ea106b9d905a04fb6ae75897ee147d, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -7230116838300416340, guid: 73ea106b9d905a04fb6ae75897ee147d,
         type: 3}
@@ -735,11 +1284,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ea106b9d905a04fb6ae75897ee147d,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 76327378}
+      addedObject: {fileID: 76327381}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ea106b9d905a04fb6ae75897ee147d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76327379}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ea106b9d905a04fb6ae75897ee147d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76327383}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ea106b9d905a04fb6ae75897ee147d,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 76327377}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 73ea106b9d905a04fb6ae75897ee147d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 76327382}
+    - targetCorrespondingSourceObject: {fileID: -7918540941379988412, guid: 73ea106b9d905a04fb6ae75897ee147d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1561483174}
   m_SourcePrefab: {fileID: 100100000, guid: 73ea106b9d905a04fb6ae75897ee147d, type: 3}
 --- !u!1001 &2088583958
 PrefabInstance:
@@ -857,7 +1422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4877872329059192946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__31_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -979,7 +1544,7 @@ GameObject:
   - component: {fileID: 4958516890347445800}
   - component: {fileID: 6493189632514610902}
   - component: {fileID: 2301766085337507713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,7 +1560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 187677294436967519}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__27_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1028,7 +1593,7 @@ GameObject:
   - component: {fileID: 2574881576726672561}
   - component: {fileID: 5555702827784129159}
   - component: {fileID: 2058897980025145213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_56
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1611,7 @@ GameObject:
   - component: {fileID: 8041478243518157686}
   - component: {fileID: 2202701447691861137}
   - component: {fileID: 3288879354833353696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1800,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1057087812432285816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__6_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1833,7 @@ GameObject:
   - component: {fileID: 5154153745506762313}
   - component: {fileID: 3498392719438912016}
   - component: {fileID: 5308714652315627024}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1359,7 +1924,7 @@ GameObject:
   - component: {fileID: 354415147559165137}
   - component: {fileID: 4990721593941550459}
   - component: {fileID: 6368101263640764115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1966,7 @@ GameObject:
   - component: {fileID: 4980050245373474638}
   - component: {fileID: 6953893003254656999}
   - component: {fileID: 2211496315919685640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_65
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1477,7 +2042,7 @@ GameObject:
   - component: {fileID: 6212139299586770727}
   - component: {fileID: 7789010294060390657}
   - component: {fileID: 8002441934903738233}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1535,7 +2100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3118579563902341198}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Huge_Alt__6_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1585,7 +2150,7 @@ GameObject:
   - component: {fileID: 7535399903612070927}
   - component: {fileID: 4917218994906128817}
   - component: {fileID: 5309851937815491029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +2166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157846273004705482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__8__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1619,7 +2184,7 @@ GameObject:
   - component: {fileID: 3831374738637255243}
   - component: {fileID: 864193910713331482}
   - component: {fileID: 315545356330756164}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +2303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5236594047626065454}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1772,7 +2337,7 @@ GameObject:
   - component: {fileID: 8939765204371511894}
   - component: {fileID: 3981497305107990755}
   - component: {fileID: 3848951790497849128}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1832,7 +2397,7 @@ GameObject:
   - component: {fileID: 6084659626798490658}
   - component: {fileID: 9049663581138933260}
   - component: {fileID: 2305486844314471463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__1__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +2493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1221588654829832006}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__18__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2027,7 +2592,7 @@ GameObject:
   - component: {fileID: 8282325492805936573}
   - component: {fileID: 6096774463103419141}
   - component: {fileID: 163214376975112952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2045,7 +2610,7 @@ GameObject:
   - component: {fileID: 405369114577301943}
   - component: {fileID: 250311966702511666}
   - component: {fileID: 3633964661540652291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2101,7 +2666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 459949627896430790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__39__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8153149557122507457}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2224,7 +2789,7 @@ GameObject:
   - component: {fileID: 6023059822515781518}
   - component: {fileID: 4162405391996465443}
   - component: {fileID: 4321971633647565734}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2264,7 +2829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6131049882993667241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__21__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2280,7 +2845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1467159228413275466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__38__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2353,7 +2918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2434894780325711980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2371,7 +2936,7 @@ GameObject:
   - component: {fileID: 5403366299274605825}
   - component: {fileID: 5275217420282460679}
   - component: {fileID: 4372326641101977402}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2431,7 +2996,7 @@ GameObject:
   - component: {fileID: 4819607893507678907}
   - component: {fileID: 7243752608298406878}
   - component: {fileID: 9042377600337689202}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2553,7 +3118,7 @@ GameObject:
   - component: {fileID: 5071434993715035269}
   - component: {fileID: 1417186958388440140}
   - component: {fileID: 4495354803056631137}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2571,7 +3136,7 @@ GameObject:
   - component: {fileID: 3118400019662650664}
   - component: {fileID: 8197799507643943476}
   - component: {fileID: 5645977102757911941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_73
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2589,7 +3154,7 @@ GameObject:
   - component: {fileID: 8348314941962602987}
   - component: {fileID: 1555476490236868453}
   - component: {fileID: 6038860338574751677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_75
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2605,7 +3170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3749440966350049409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__18_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2693,7 +3258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4005528791245378784}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__28__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2757,7 +3322,7 @@ GameObject:
   - component: {fileID: 3932474462527567378}
   - component: {fileID: 6066932661824366652}
   - component: {fileID: 3057407069294461517}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2773,7 +3338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4765605520198509429}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2819,7 +3384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8640388585741793718}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2911,7 +3476,7 @@ GameObject:
   - component: {fileID: 7480885867634902517}
   - component: {fileID: 2305961653132446465}
   - component: {fileID: 5163187199253280879}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2935,7 +3500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2316280269285365946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__1__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3070,7 +3635,7 @@ GameObject:
   - component: {fileID: 7128790881975944297}
   - component: {fileID: 505863142610140268}
   - component: {fileID: 1910068799674524148}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3130,7 +3695,7 @@ GameObject:
   - component: {fileID: 4270901821213990329}
   - component: {fileID: 7251416854159811704}
   - component: {fileID: 293326650744813595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3170,7 +3735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8128347425582927221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,7 +3767,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5139476998999488929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3260,7 +3825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5530214612942123710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__4_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3294,7 +3859,7 @@ GameObject:
   - component: {fileID: 2306856097767132362}
   - component: {fileID: 5661345538959898524}
   - component: {fileID: 7259889746325212709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3469,7 +4034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999440378779451101}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolderSet__Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3485,7 +4050,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3663660456082081703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3559,7 +4124,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7010930014125088763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__14__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3577,7 +4142,7 @@ GameObject:
   - component: {fileID: 917188248012226086}
   - component: {fileID: 453242012383449899}
   - component: {fileID: 9115687576620620772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3603,7 +4168,7 @@ GameObject:
   - component: {fileID: 1570102824943390972}
   - component: {fileID: 3500197532293833137}
   - component: {fileID: 1869733366188143554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3621,7 +4186,7 @@ GameObject:
   - component: {fileID: 5364096938736743648}
   - component: {fileID: 7983328208791989688}
   - component: {fileID: 9128455223753168842}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3704,7 +4269,7 @@ GameObject:
   - component: {fileID: 3516784835913407370}
   - component: {fileID: 2330588325115339485}
   - component: {fileID: 5556385164593454706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3940,7 +4505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1056741033701787562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__16_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3971,7 +4536,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3013332641801012304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4146,7 +4711,7 @@ GameObject:
   - component: {fileID: 2314027299974025878}
   - component: {fileID: 5279296138531184819}
   - component: {fileID: 8183602470141611608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonWall60Viewport_Variant__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4204,7 +4769,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750894311978876542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__43_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4220,7 +4785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582751494314232065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__26_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4236,7 +4801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6462593190722818732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4252,7 +4817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2519194726239251937}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__20__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4325,7 +4890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8151204299547712772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__3_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4383,7 +4948,7 @@ GameObject:
   - component: {fileID: 5587910447462637231}
   - component: {fileID: 2208961763672583592}
   - component: {fileID: 2603374331096306981}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4399,7 +4964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4599315441816728946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__4__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4535,7 +5100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9164274544638209709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__5_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4595,7 +5160,7 @@ GameObject:
   - component: {fileID: 4307043415282352373}
   - component: {fileID: 952453230104707003}
   - component: {fileID: 3401557731016319528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4613,7 +5178,7 @@ GameObject:
   - component: {fileID: 1390656069586102171}
   - component: {fileID: 662406992811681877}
   - component: {fileID: 8992652837946906072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4647,7 +5212,7 @@ GameObject:
   - component: {fileID: 174703497464499686}
   - component: {fileID: 77714431102118649}
   - component: {fileID: 6048572615207847661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall__1__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4762,7 +5327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2214626850409209946}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4780,7 +5345,7 @@ GameObject:
   - component: {fileID: 9125885872393805674}
   - component: {fileID: 7998375582231919587}
   - component: {fileID: 3198637237727685648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4840,7 +5405,7 @@ GameObject:
   - component: {fileID: 1647841860083021362}
   - component: {fileID: 5143138492141589354}
   - component: {fileID: 1978593546357370013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4856,7 +5421,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7410906801540431277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Huge_Alt__4_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4872,7 +5437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7365361099252176821}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__43__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4905,7 +5470,7 @@ GameObject:
   - component: {fileID: 3071872121052916613}
   - component: {fileID: 3792410851618840432}
   - component: {fileID: 1419370440046874557}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443019947030361062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__29_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5086,7 +5651,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6324272464053310484}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__41__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5102,7 +5667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5861112667439801645}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__31__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5120,7 +5685,7 @@ GameObject:
   - component: {fileID: 1504618607573880808}
   - component: {fileID: 6461930003460231670}
   - component: {fileID: 3648290608287382828}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_54
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5184,7 +5749,7 @@ GameObject:
   - component: {fileID: 1758500723119492814}
   - component: {fileID: 4085587271605246308}
   - component: {fileID: 2679696975860235659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5244,7 +5809,7 @@ GameObject:
   - component: {fileID: 8029897570154909026}
   - component: {fileID: 8976095199240031852}
   - component: {fileID: 136427696470507875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5471,7 +6036,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7424394699052986548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__17__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5529,7 +6094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 154034178368142353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__24__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5547,7 +6112,7 @@ GameObject:
   - component: {fileID: 1517259467547275367}
   - component: {fileID: 5316688005907867916}
   - component: {fileID: 8652637601913457637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5619,7 +6184,7 @@ GameObject:
   - component: {fileID: 2986434175712595671}
   - component: {fileID: 2571038757147904440}
   - component: {fileID: 8414319195225773278}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_69
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5635,7 +6200,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8076522566195145593}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__28_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5819,7 +6384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7780206194247122083}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__11_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5852,7 +6417,7 @@ GameObject:
   - component: {fileID: 5524732413162901230}
   - component: {fileID: 7718441071074294468}
   - component: {fileID: 1836044946644461991}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5878,7 +6443,7 @@ GameObject:
   - component: {fileID: 1034939874561067365}
   - component: {fileID: 7321903912280510609}
   - component: {fileID: 3121429531020033082}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5912,7 +6477,7 @@ GameObject:
   - component: {fileID: 5608945061448631191}
   - component: {fileID: 8915305014828809670}
   - component: {fileID: 7159968768806524545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5930,7 +6495,7 @@ GameObject:
   - component: {fileID: 4214325820110695781}
   - component: {fileID: 5620721931026813432}
   - component: {fileID: 4805728704160296797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall__1__2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5948,7 +6513,7 @@ GameObject:
   - component: {fileID: 6125302452704066492}
   - component: {fileID: 1023067345963449866}
   - component: {fileID: 3173079091462644969}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6125,7 +6690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3155580882023955291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Small__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6141,7 +6706,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8610495318018646417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__40_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6175,7 +6740,7 @@ GameObject:
   - component: {fileID: 139777772705132869}
   - component: {fileID: 7392245327344065488}
   - component: {fileID: 1215338317088550582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6209,7 +6774,7 @@ GameObject:
   - component: {fileID: 6457408066938705397}
   - component: {fileID: 7741342148514273907}
   - component: {fileID: 186748417337472440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_76
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6358,7 +6923,7 @@ GameObject:
   - component: {fileID: 5451635737147618768}
   - component: {fileID: 7646532964326437827}
   - component: {fileID: 1696386686424368053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_70
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6392,7 +6957,7 @@ GameObject:
   - component: {fileID: 8349225619716164437}
   - component: {fileID: 5854897878645478420}
   - component: {fileID: 5292360491885373421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6434,7 +6999,7 @@ GameObject:
   - component: {fileID: 5345511082898497943}
   - component: {fileID: 8696420453023886745}
   - component: {fileID: 3185449703213680525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonWall60Viewport_Variant__5_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6468,7 +7033,7 @@ GameObject:
   - component: {fileID: 8616757837012377150}
   - component: {fileID: 7866542076946712045}
   - component: {fileID: 5012591823711871642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6486,7 +7051,7 @@ GameObject:
   - component: {fileID: 7564995375073132973}
   - component: {fileID: 47272708936581204}
   - component: {fileID: 3820394614928619634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6504,7 +7069,7 @@ GameObject:
   - component: {fileID: 1904793789916701697}
   - component: {fileID: 1015275088024749124}
   - component: {fileID: 498937992960213112}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6520,7 +7085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695204699179123726}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__42__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6633,7 +7198,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646248973932353486}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__42_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6691,7 +7256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1707178239968639243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6709,7 +7274,7 @@ GameObject:
   - component: {fileID: 555880735170680741}
   - component: {fileID: 3956812388395989359}
   - component: {fileID: 8938293102526180067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6783,7 +7348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3257085429688921247}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6801,7 +7366,7 @@ GameObject:
   - component: {fileID: 7797526247171458902}
   - component: {fileID: 6362245443945280060}
   - component: {fileID: 5637560850414866584}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6827,7 +7392,7 @@ GameObject:
   - component: {fileID: 3202573283085552480}
   - component: {fileID: 5359685798084628624}
   - component: {fileID: 8654884703754522754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6903,7 +7468,7 @@ GameObject:
   - component: {fileID: 4926399683620386607}
   - component: {fileID: 5878314349223562706}
   - component: {fileID: 7487042585089086630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7005,7 +7570,7 @@ GameObject:
   - component: {fileID: 5874077438949246256}
   - component: {fileID: 7142600893421300149}
   - component: {fileID: 3036657158426808199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7031,7 +7596,7 @@ GameObject:
   - component: {fileID: 9211934527209428667}
   - component: {fileID: 2515493069600053118}
   - component: {fileID: 8558443881694516224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_71
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7064,7 +7629,7 @@ GameObject:
   - component: {fileID: 8721758613480046660}
   - component: {fileID: 6357336050732476770}
   - component: {fileID: 6509452649512146262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7138,7 +7703,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6674061989648688195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__30_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7154,7 +7719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5182487079378408480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__35_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7170,7 +7735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5597675062621937411}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonPlates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7228,7 +7793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583953353385687748}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__36_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7244,7 +7809,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3667455076110003841}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__7_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7277,7 +7842,7 @@ GameObject:
   - component: {fileID: 3752602764684429702}
   - component: {fileID: 2588520548954050011}
   - component: {fileID: 1088056006423857705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7621,7 +8186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3016936960763286102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Huge_Alt__7_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7727,7 +8292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5211297160059694108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7819,7 +8384,7 @@ GameObject:
   - component: {fileID: 6229021575023893245}
   - component: {fileID: 6091095150801114690}
   - component: {fileID: 8992447431075507853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7983,7 +8548,7 @@ GameObject:
   - component: {fileID: 3074167482132432391}
   - component: {fileID: 3418131384073886707}
   - component: {fileID: 3080256212060837804}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_58
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8075,7 +8640,7 @@ GameObject:
   - component: {fileID: 5520566121068257006}
   - component: {fileID: 5805728865532659070}
   - component: {fileID: 4577827187561183431}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8106,7 +8671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7292772651632456205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__19__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8236,7 +8801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1671723769505732752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__34__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8252,7 +8817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5888214726475368240}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8310,7 +8875,7 @@ GameObject:
   - component: {fileID: 3525389780232892982}
   - component: {fileID: 6480280191913083507}
   - component: {fileID: 7017994400857084313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8328,7 +8893,7 @@ GameObject:
   - component: {fileID: 7986628815374765303}
   - component: {fileID: 1090324311697987195}
   - component: {fileID: 5052972773715983013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8541,7 +9106,7 @@ GameObject:
   - component: {fileID: 9150706468312575102}
   - component: {fileID: 3864673258026186028}
   - component: {fileID: 2449474117442993028}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8559,7 +9124,7 @@ GameObject:
   - component: {fileID: 3379575233364979742}
   - component: {fileID: 3828732517152975042}
   - component: {fileID: 5699322828891001650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerBowl__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8575,7 +9140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8180178762922980738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__23_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8593,7 +9158,7 @@ GameObject:
   - component: {fileID: 3375356178569295956}
   - component: {fileID: 4574554614016949702}
   - component: {fileID: 3880984509777591806}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_67
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8805,7 +9370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4355721161645204862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__21_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9031,7 +9596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 847585968862977618}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ArenaEdge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9072,7 +9637,7 @@ GameObject:
   - component: {fileID: 3744169895872689277}
   - component: {fileID: 6672360390155237553}
   - component: {fileID: 5736279876195551274}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9242,7 +9807,7 @@ GameObject:
   - component: {fileID: 329544711552365033}
   - component: {fileID: 7113127684759022920}
   - component: {fileID: 1445804369192929766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9302,7 +9867,7 @@ GameObject:
   - component: {fileID: 2129391973934932044}
   - component: {fileID: 1938200358214016918}
   - component: {fileID: 4157993254750139637}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9320,7 +9885,7 @@ GameObject:
   - component: {fileID: 1697903272704449712}
   - component: {fileID: 6190426124250195025}
   - component: {fileID: 7685107298042151416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9444,7 +10009,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3436876098590186802}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__15__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9479,7 +10044,7 @@ GameObject:
   - component: {fileID: 3934623000088592450}
   - component: {fileID: 3934623000088592449}
   - component: {fileID: 3934623000088592448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HOLDER:_Final_Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9595,7 +10160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 334991171788894659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Huge_Alt__5_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9717,7 +10282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4521330088530760607}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__23__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9733,7 +10298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4073078345764341766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9806,7 +10371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6290191326458171687}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__29__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9824,7 +10389,7 @@ GameObject:
   - component: {fileID: 341600770394401063}
   - component: {fileID: 8038469652035039153}
   - component: {fileID: 2012389670843491575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9842,7 +10407,7 @@ GameObject:
   - component: {fileID: 8157424189438866978}
   - component: {fileID: 5564124396173168949}
   - component: {fileID: 3728221879187728228}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerBowl__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9860,7 +10425,7 @@ GameObject:
   - component: {fileID: 5680072506871144760}
   - component: {fileID: 5726403602546777490}
   - component: {fileID: 7291510879662908700}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10119,7 +10684,7 @@ GameObject:
   - component: {fileID: 7296496827987374820}
   - component: {fileID: 1006224295183013072}
   - component: {fileID: 8073577874857142018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_61
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10180,7 +10745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2083283199352365763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__40__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10196,7 +10761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8470928931372350218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__12_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10412,7 +10977,7 @@ GameObject:
   - component: {fileID: 9018651037366850055}
   - component: {fileID: 6888376071206237616}
   - component: {fileID: 3074376999443870427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10436,7 +11001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3727676218317908413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__6__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10452,7 +11017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4317463657197989409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__26__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10534,7 +11099,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1072010926591811859}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__20_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10576,7 +11141,7 @@ GameObject:
   - component: {fileID: 1591965342134979441}
   - component: {fileID: 1674677461585485856}
   - component: {fileID: 4838819198183526183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonWall60Viewport_Variant__3_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10649,7 +11214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7348357553642641641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__9__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10757,7 +11322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 940260963658132528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__9_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10817,7 +11382,7 @@ GameObject:
   - component: {fileID: 1081106976408981576}
   - component: {fileID: 461768500449266562}
   - component: {fileID: 694854813628813425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10833,7 +11398,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3797200248894538779}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__8_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10909,7 +11474,7 @@ GameObject:
   - component: {fileID: 6331261741276139536}
   - component: {fileID: 7683917541657778745}
   - component: {fileID: 738785149059158455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10927,7 +11492,7 @@ GameObject:
   - component: {fileID: 8998531361038173688}
   - component: {fileID: 3233941960275948274}
   - component: {fileID: 1300172250890724480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10943,7 +11508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3089147786140802313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10975,7 +11540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8584259766256316141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__32_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11007,7 +11572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9156285810423016473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11023,7 +11588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 561655633121663623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11104,7 +11669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 519124723576015184}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__27__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11168,7 +11733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 65882881127252873}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__33__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11186,7 +11751,7 @@ GameObject:
   - component: {fileID: 5898307094700477490}
   - component: {fileID: 5996211497047448279}
   - component: {fileID: 5016069066991521315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__2__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11204,7 +11769,7 @@ GameObject:
   - component: {fileID: 3321873561180047105}
   - component: {fileID: 7628323508836038212}
   - component: {fileID: 6058953300245798641}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11329,7 +11894,7 @@ GameObject:
   - component: {fileID: 5346934424649302526}
   - component: {fileID: 3421996536763805578}
   - component: {fileID: 1266942243796484648}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11345,7 +11910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2683721910675612990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__24_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11436,7 +12001,7 @@ GameObject:
   - component: {fileID: 2077501679251994239}
   - component: {fileID: 8416715397479890064}
   - component: {fileID: 6951122884487651597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11452,7 +12017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7186349313431475102}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__13_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11499,7 +12064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5899001128580925608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Boulders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11530,7 +12095,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3903812458502887761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__25_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11548,7 +12113,7 @@ GameObject:
   - component: {fileID: 5090149191851888330}
   - component: {fileID: 7187221367930830810}
   - component: {fileID: 158722968092823016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11566,7 +12131,7 @@ GameObject:
   - component: {fileID: 7228735474063710327}
   - component: {fileID: 2116771880069082959}
   - component: {fileID: 6845820201334646504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11780,7 +12345,7 @@ GameObject:
   - component: {fileID: 1990712152052961681}
   - component: {fileID: 2803689185457880710}
   - component: {fileID: 7269245489862896437}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11813,7 +12378,7 @@ GameObject:
   - component: {fileID: 7437230404858946386}
   - component: {fileID: 5054806084677678063}
   - component: {fileID: 5172180531212277501}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11870,7 +12435,7 @@ GameObject:
   - component: {fileID: 1016271450926912059}
   - component: {fileID: 5145651550059804113}
   - component: {fileID: 8720206029389403121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11903,7 +12468,7 @@ GameObject:
   - component: {fileID: 4184719623634080152}
   - component: {fileID: 6501776280713209326}
   - component: {fileID: 2785805277186141628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_72
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12010,7 +12575,7 @@ GameObject:
   - component: {fileID: 5130599724248772057}
   - component: {fileID: 5918336931407814629}
   - component: {fileID: 7888708985767640168}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12125,7 +12690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1316660556915504166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__10_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12159,7 +12724,7 @@ GameObject:
   - component: {fileID: 5257161432914700538}
   - component: {fileID: 6869770009303387168}
   - component: {fileID: 1519911513826308992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12177,7 +12742,7 @@ GameObject:
   - component: {fileID: 8137943945204875577}
   - component: {fileID: 23835784429042449}
   - component: {fileID: 6400780537160723181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12193,7 +12758,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7082707384451417466}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__12__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12243,7 +12808,7 @@ GameObject:
   - component: {fileID: 3676203831873939034}
   - component: {fileID: 3109257533632318556}
   - component: {fileID: 4532823137480063591}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12267,7 +12832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7893036756062502085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolderSet__Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12285,7 +12850,7 @@ GameObject:
   - component: {fileID: 1583563052621792255}
   - component: {fileID: 4503233142679215385}
   - component: {fileID: 1804348332974888453}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12334,7 +12899,7 @@ GameObject:
   - component: {fileID: 2102227325795521804}
   - component: {fileID: 2085608729435018207}
   - component: {fileID: 388594693895598271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__2__2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12352,7 +12917,7 @@ GameObject:
   - component: {fileID: 1838501428206314964}
   - component: {fileID: 3715799071503635935}
   - component: {fileID: 1384466710463056930}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12410,7 +12975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7083060651274924583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__33_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12428,7 +12993,7 @@ GameObject:
   - component: {fileID: 8134485730202632704}
   - component: {fileID: 6799610742973579618}
   - component: {fileID: 4029649408101726955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12551,7 +13116,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5324496729725127917}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__3_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12607,7 +13172,7 @@ GameObject:
   - component: {fileID: 109163641973872302}
   - component: {fileID: 7788815060597869835}
   - component: {fileID: 1468389734456710110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12638,7 +13203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4160707689711957370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__3__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12679,7 +13244,7 @@ GameObject:
   - component: {fileID: 7318056304253989465}
   - component: {fileID: 8290520370563622359}
   - component: {fileID: 8814852282007562602}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonWall60Viewport_Variant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12695,7 +13260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1709554841901050133}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__6_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12737,7 +13302,7 @@ GameObject:
   - component: {fileID: 781886788501687802}
   - component: {fileID: 7495175174504278323}
   - component: {fileID: 4853628092759770116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12770,7 +13335,7 @@ GameObject:
   - component: {fileID: 8981524260678003915}
   - component: {fileID: 3439539070719027373}
   - component: {fileID: 3988540441067582860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12958,7 +13523,7 @@ GameObject:
   - component: {fileID: 49702958998059855}
   - component: {fileID: 292125496530437098}
   - component: {fileID: 6798368330438815430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13056,7 +13621,7 @@ GameObject:
   - component: {fileID: 4204543541280310036}
   - component: {fileID: 7667728015797837680}
   - component: {fileID: 4110001819362707279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13072,7 +13637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8730642273267120622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13111,7 +13676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9212366290572585516}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__10__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13169,7 +13734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2531240730367289032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13243,7 +13808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5678370722696363620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__15_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13261,7 +13826,7 @@ GameObject:
   - component: {fileID: 7514683978387482574}
   - component: {fileID: 8782170704191348359}
   - component: {fileID: 2447390815826556036}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13329,7 +13894,7 @@ GameObject:
   - component: {fileID: 769552345962012444}
   - component: {fileID: 1337959749793745955}
   - component: {fileID: 1642379032671029985}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13433,7 +13998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2378570835309691535}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__11__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13541,7 +14106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3741460934999068863}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__13__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13557,7 +14122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4490650399733661640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__36__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13605,7 +14170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237118535404621217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13621,7 +14186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3268732965771986100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13639,7 +14204,7 @@ GameObject:
   - component: {fileID: 5135598784550152354}
   - component: {fileID: 219298823133382742}
   - component: {fileID: 5142253676500078321}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13853,7 +14418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3709970722646805663}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__7_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13902,7 +14467,7 @@ GameObject:
   - component: {fileID: 1695670254455759640}
   - component: {fileID: 2748286013422215815}
   - component: {fileID: 2965017898698029668}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13920,7 +14485,7 @@ GameObject:
   - component: {fileID: 9138923253130067383}
   - component: {fileID: 6387761696208736081}
   - component: {fileID: 9008322713888139922}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13946,7 +14511,7 @@ GameObject:
   - component: {fileID: 2411050509149334380}
   - component: {fileID: 4737714535968570873}
   - component: {fileID: 6475052104587943089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13964,7 +14529,7 @@ GameObject:
   - component: {fileID: 6786930632086907443}
   - component: {fileID: 7089615693688471905}
   - component: {fileID: 3551093004389357248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13980,7 +14545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 901523223689757613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Silver_Cluster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14053,7 +14618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5107255472062080392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__30__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14161,7 +14726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6931303887070769000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14203,7 +14768,7 @@ GameObject:
   - component: {fileID: 5043461222135471974}
   - component: {fileID: 2007009028030296173}
   - component: {fileID: 8490993912908493820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__1__2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14229,7 +14794,7 @@ GameObject:
   - component: {fileID: 1496118066877827558}
   - component: {fileID: 1373484109093979737}
   - component: {fileID: 7802235015538386788}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14276,7 +14841,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250701573717561855}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Small__3_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14294,7 +14859,7 @@ GameObject:
   - component: {fileID: 3505462675494597071}
   - component: {fileID: 5455423063492051559}
   - component: {fileID: 3866772265920430206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14312,7 +14877,7 @@ GameObject:
   - component: {fileID: 6570320074968180203}
   - component: {fileID: 2900216221831160864}
   - component: {fileID: 3066507907383893368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14330,7 +14895,7 @@ GameObject:
   - component: {fileID: 7968566207763602003}
   - component: {fileID: 982025412371720814}
   - component: {fileID: 1925602720269520604}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14411,7 +14976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454835776657274172}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__34_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14533,7 +15098,7 @@ GameObject:
   - component: {fileID: 3781651469861803441}
   - component: {fileID: 4006133368193973078}
   - component: {fileID: 5566118931958706392}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__2__8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14624,7 +15189,7 @@ GameObject:
   - component: {fileID: 2823063855447394765}
   - component: {fileID: 2605309114305849219}
   - component: {fileID: 7186676190241831418}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14692,7 +15257,7 @@ GameObject:
   - component: {fileID: 3232774024647857414}
   - component: {fileID: 3063521248884835974}
   - component: {fileID: 4590166073005825479}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14710,7 +15275,7 @@ GameObject:
   - component: {fileID: 499371806165612191}
   - component: {fileID: 2041728174988151315}
   - component: {fileID: 5868816169067297564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_60
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14728,7 +15293,7 @@ GameObject:
   - component: {fileID: 8745245042888435329}
   - component: {fileID: 5109158820288210658}
   - component: {fileID: 6686825823608687400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14744,7 +15309,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2282455905937687989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14760,7 +15325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2215183126436034277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__19_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14866,7 +15431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7427344023460940192}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolderSet__Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14884,7 +15449,7 @@ GameObject:
   - component: {fileID: 4002793347227568989}
   - component: {fileID: 3957764175600706455}
   - component: {fileID: 3570829287252326085}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_1_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14990,7 +15555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3969106820932569811}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15008,7 +15573,7 @@ GameObject:
   - component: {fileID: 4568326944318917785}
   - component: {fileID: 6497561543525349272}
   - component: {fileID: 4065344373834409711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15041,7 +15606,7 @@ GameObject:
   - component: {fileID: 4023673067273344680}
   - component: {fileID: 7281849327303026642}
   - component: {fileID: 593214518084513964}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_57
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15089,7 +15654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7837575973468787698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__17_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15105,7 +15670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8809725932518438067}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arena_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15121,7 +15686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3138231629378483692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15139,7 +15704,7 @@ GameObject:
   - component: {fileID: 8876010448984190390}
   - component: {fileID: 5406561441340496058}
   - component: {fileID: 8468206798273395621}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerBowl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15268,7 +15833,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2352991968935736608}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__22_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15286,7 +15851,7 @@ GameObject:
   - component: {fileID: 8208736117338663566}
   - component: {fileID: 5535722896275014498}
   - component: {fileID: 1614078646920329852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15419,7 +15984,7 @@ GameObject:
   - component: {fileID: 9145607363966555530}
   - component: {fileID: 6536013495307373134}
   - component: {fileID: 2050308470322281393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15445,7 +16010,7 @@ GameObject:
   - component: {fileID: 3058804728580601133}
   - component: {fileID: 4468486742950466657}
   - component: {fileID: 5847594198651237302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15529,7 +16094,7 @@ GameObject:
   - component: {fileID: 4704733795940966230}
   - component: {fileID: 8903306104386581095}
   - component: {fileID: 5655685302799724825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15628,7 +16193,7 @@ GameObject:
   - component: {fileID: 7646661782619806010}
   - component: {fileID: 6848719222857163039}
   - component: {fileID: 3552798882915701568}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15704,7 +16269,7 @@ GameObject:
   - component: {fileID: 3836148770988846890}
   - component: {fileID: 3667959480415250910}
   - component: {fileID: 969269663069320858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15762,7 +16327,7 @@ GameObject:
   - component: {fileID: 1460389028227660044}
   - component: {fileID: 4926459708727703488}
   - component: {fileID: 5496566739012573219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15780,7 +16345,7 @@ GameObject:
   - component: {fileID: 165152232816017635}
   - component: {fileID: 7151976212103507760}
   - component: {fileID: 764550883627542371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__2__3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15827,7 +16392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7627650337248374830}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__16__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15853,7 +16418,7 @@ GameObject:
   - component: {fileID: 7416214853125435473}
   - component: {fileID: 5499383178362589571}
   - component: {fileID: 7540145395363191334}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15986,7 +16551,7 @@ GameObject:
   - component: {fileID: 3631035449809215267}
   - component: {fileID: 893283199212152865}
   - component: {fileID: 6292262657365183241}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16046,7 +16611,7 @@ GameObject:
   - component: {fileID: 8676998184076543051}
   - component: {fileID: 7823611004797388875}
   - component: {fileID: 8687149421136953488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16112,7 +16677,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6580830686412160266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__32__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16324,7 +16889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2765074112290921732}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__2__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16340,7 +16905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4122749140966226173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HOLDER:_Robble__Outer_Inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16373,7 +16938,7 @@ GameObject:
   - component: {fileID: 2310210277491311221}
   - component: {fileID: 1064829487811217318}
   - component: {fileID: 2872539206270251068}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16399,7 +16964,7 @@ GameObject:
   - component: {fileID: 4870976013213697888}
   - component: {fileID: 5962147400636380120}
   - component: {fileID: 6803838110606269438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16447,7 +17012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8984032146019690599}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16650,7 +17215,7 @@ GameObject:
   - component: {fileID: 385576495231035949}
   - component: {fileID: 4792292177008896749}
   - component: {fileID: 4693379007927945289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16668,7 +17233,7 @@ GameObject:
   - component: {fileID: 8176688923019515912}
   - component: {fileID: 5787401845599808703}
   - component: {fileID: 2207249894014256074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16684,7 +17249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7926189142813593118}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__41_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16789,7 +17354,7 @@ GameObject:
   - component: {fileID: 7522029762335610761}
   - component: {fileID: 2064968981212775230}
   - component: {fileID: 6201154856852481697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonWall60Viewport_Variant__4_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16807,7 +17372,7 @@ GameObject:
   - component: {fileID: 6668193553783115395}
   - component: {fileID: 5435897580065214559}
   - component: {fileID: 4571796968959063630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16823,7 +17388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1671351448021314738}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__22__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16839,7 +17404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 543690571172519419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__5__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16946,7 +17511,7 @@ GameObject:
   - component: {fileID: 5033944251143288557}
   - component: {fileID: 4764811021072599883}
   - component: {fileID: 4599287783024154958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16972,7 +17537,7 @@ GameObject:
   - component: {fileID: 65094063099739268}
   - component: {fileID: 3514215259865372236}
   - component: {fileID: 9080758355033304998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_62
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17048,7 +17613,7 @@ GameObject:
   - component: {fileID: 1531195961760918564}
   - component: {fileID: 2850565204327076394}
   - component: {fileID: 3358011685711870033}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17066,7 +17631,7 @@ GameObject:
   - component: {fileID: 2046775455245328280}
   - component: {fileID: 4098130495486795264}
   - component: {fileID: 8252664802676566670}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17092,7 +17657,7 @@ GameObject:
   - component: {fileID: 4642864096750796431}
   - component: {fileID: 8505110685381798105}
   - component: {fileID: 2756834448853420456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17110,7 +17675,7 @@ GameObject:
   - component: {fileID: 192248869915170155}
   - component: {fileID: 488950333758202075}
   - component: {fileID: 7214119558080979273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17151,7 +17716,7 @@ GameObject:
   - component: {fileID: 8779974601609339993}
   - component: {fileID: 7176525009320671584}
   - component: {fileID: 2643180755888665221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonWall60Viewport_Variant__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17265,7 +17830,7 @@ GameObject:
   - component: {fileID: 8589866115587743850}
   - component: {fileID: 496932424175706819}
   - component: {fileID: 7859533064492920432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn1_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17325,7 +17890,7 @@ GameObject:
   - component: {fileID: 946274232138800688}
   - component: {fileID: 4263484205635314353}
   - component: {fileID: 4222859617178815121}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_LOD0_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17427,7 +17992,7 @@ GameObject:
   - component: {fileID: 4768694187903637853}
   - component: {fileID: 4431509198539143306}
   - component: {fileID: 8171796919565467290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__1__3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17530,7 +18095,7 @@ GameObject:
   - component: {fileID: 2216624547163512389}
   - component: {fileID: 3743957185601370883}
   - component: {fileID: 7969515540436641289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17680,7 +18245,7 @@ GameObject:
   - component: {fileID: 948122163314966014}
   - component: {fileID: 8074846500948142429}
   - component: {fileID: 3690771852531831346}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17713,7 +18278,7 @@ GameObject:
   - component: {fileID: 480016442126975717}
   - component: {fileID: 3194323742520964034}
   - component: {fileID: 7633452728757283575}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17729,7 +18294,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2415272975770167579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17745,7 +18310,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6952606249106150579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__4_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17786,7 +18351,7 @@ GameObject:
   - component: {fileID: 3812508750440709075}
   - component: {fileID: 3221565268041936082}
   - component: {fileID: 2054135602148717548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17868,7 +18433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450567603500883706}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__39_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18021,7 +18586,7 @@ GameObject:
   - component: {fileID: 1478339437434926404}
   - component: {fileID: 6796985361013552886}
   - component: {fileID: 1726725983616526990}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18151,7 +18716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5785668820176817324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__37__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18167,7 +18732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979930941512951183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__35__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18208,7 +18773,7 @@ GameObject:
   - component: {fileID: 2125582099030755632}
   - component: {fileID: 6836425935536336346}
   - component: {fileID: 7859563431481939248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18226,7 +18791,7 @@ GameObject:
   - component: {fileID: 5433081784932396328}
   - component: {fileID: 7760038673887139930}
   - component: {fileID: 2793922581705245114}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPillar__1_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18242,7 +18807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5683611947809553282}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18323,7 +18888,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634427256673480039}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18357,7 +18922,7 @@ GameObject:
   - component: {fileID: 788020882730610960}
   - component: {fileID: 3207025903179952428}
   - component: {fileID: 5728686837302882223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaBaseLayerOctagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18375,7 +18940,7 @@ GameObject:
   - component: {fileID: 913728584224457234}
   - component: {fileID: 9176312117714060461}
   - component: {fileID: 7201715251937114472}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_LOD0_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18421,7 +18986,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3053100482956784876}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18439,7 +19004,7 @@ GameObject:
   - component: {fileID: 363174365018861746}
   - component: {fileID: 7214294973638896494}
   - component: {fileID: 7853330889984036967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18455,7 +19020,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2497545133583859851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__7__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18671,7 +19236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6696450817514174399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OctagonHolder__5_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18728,7 +19293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1115814203933577577}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColumnHolder_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18760,7 +19325,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5646387706569950239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18793,7 +19358,7 @@ GameObject:
   - component: {fileID: 701901257738180033}
   - component: {fileID: 5248264613466675061}
   - component: {fileID: 3669917572206583189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonPlatformFlatSmall__1__3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18825,7 +19390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6712469064209608054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__37_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18857,7 +19422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8624958684255200993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__38_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19024,7 +19589,7 @@ GameObject:
   - component: {fileID: 6201381191989015774}
   - component: {fileID: 495629920162908076}
   - component: {fileID: 8984431362707743314}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19113,7 +19678,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505442756224609545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__25__1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19167,7 +19732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1242716927282108498}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HOLDER:_Rubble__Outer_Outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19183,7 +19748,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2619546367249245277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RubbleHolder__14_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19280,7 +19845,7 @@ GameObject:
   - component: {fileID: 2019645613325083937}
   - component: {fileID: 8603367169247682358}
   - component: {fileID: 3823782517457664332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_64
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19314,7 +19879,7 @@ GameObject:
   - component: {fileID: 2200931361517274684}
   - component: {fileID: 3126282307318997702}
   - component: {fileID: 1253501306033939984}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19387,7 +19952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8327428034329466393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRoots1_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19694,7 +20259,7 @@ GameObject:
   - component: {fileID: 3831599866537361199}
   - component: {fileID: 2237269586784598736}
   - component: {fileID: 8098154286574239077}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19712,7 +20277,7 @@ GameObject:
   - component: {fileID: 7551640663333993164}
   - component: {fileID: 4690895917894804020}
   - component: {fileID: 413728484043844248}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19772,7 +20337,7 @@ GameObject:
   - component: {fileID: 5941381933929695588}
   - component: {fileID: 1486018676439849137}
   - component: {fileID: 58439952530865745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonRockFormationMedium_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19788,7 +20353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6623219620619603773}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spmSilverRootsColumnToCeiling_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19980,7 +20545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6547132913825177040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaColumn__Small__2_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20006,7 +20571,7 @@ GameObject:
   - component: {fileID: 1960370159693779707}
   - component: {fileID: 5054817803752272397}
   - component: {fileID: 2088291646403767480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoonArenaRubble_59
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20048,8 +20613,10 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 844326800}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 2088583958}
   - {fileID: 2175095085199249227}
   - {fileID: 1987255903}
+  - {fileID: 1751811514}

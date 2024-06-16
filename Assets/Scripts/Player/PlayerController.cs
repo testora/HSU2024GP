@@ -1,7 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Claims;
+using Unity.VisualScripting;
+using UnityEditor;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [Flags]
 public enum DIRECTION
@@ -33,29 +38,52 @@ public class PlayerController : MonoBehaviour
     private uint bitDirection = 0;
     private PlayerState playerState;
 
+    Rigidbody rb;
     Animator animator;
     AnimatorStateInfo aimPitchState;
     AnimatorStateInfo aimYawState;
 
-    public float a;
-    public float b;
+    private Quaternion targetRotation;
+    private float rotationSpeed = 10f;
 
     void Start()
     {
+        targetRotation = transform.rotation;
+
         playerState = GetComponent<PlayerState>();
 
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
         aimPitchState = GetComponent<Animator>().GetNextAnimatorStateInfo(1);
         aimYawState = GetComponent<Animator>().GetNextAnimatorStateInfo(2);
+
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        rb.inertiaTensor = rb.inertiaTensor;
+        rb.inertiaTensorRotation = rb.inertiaTensorRotation;
     }
 
     void Update()
     {
-    //  float moveHorizontal = Input.GetAxis("Horizontal");
-    //  float moveVertical = Input.GetAxis("Vertical");
+        //  float moveHorizontal = Input.GetAxis("Horizontal");
+        //  float moveVertical = Input.GetAxis("Vertical");
 
         Handle_Bitset();
         Handle_MouseInput();
+        Handle_KeyInput();
+
+//        if (Input.GetKeyDown(KeyCode.A))
+//        {
+//
+//            Debug.Log("0 " + transform.forward);
+//            Debug.Log("1 " + transform.position);
+//            Debug.Log("2 " + GameInstance.Instance.mbCamera.transform.forward);
+//                transform.LookAt(transform.position + GameInstance.Instance.mbCamera.transform.forward);
+//         //   transform.LookAt(transform.position - GameInstance.Instance.mbCamera.transform.right);
+//            Debug.Log("3 " + transform.forward);
+//            Debug.Log("4 " + transform.up);
+//            transform.up = Vector3.up;
+//            Debug.Log("5 " + transform.forward);
+//        }
     }
 
     void Handle_Bitset()
@@ -89,44 +117,161 @@ public class PlayerController : MonoBehaviour
         animator.SetLayerWeight(2, 2f * Mathf.Abs(0.5f - yaw));
         animator.Play(aimPitchState.fullPathHash, 1, pitch);
         animator.Play(aimYawState.fullPathHash, 2, yaw);
-    }    
+    }
 
     void Handle_KeyInput()
     {
+        bool isAir = playerState.IsState(RG_STATE.AIR);
+        bool isAim = playerState.IsState(RG_STATE.AIM);
+        bool isSprint = playerState.IsState(RG_STATE.SPRINT);
+
         switch (bitDirection)
         {
             case Direction.BITMASK_FORWARD:
             {
                 if (Input.GetKeyDown(KeyCode.LeftControl))
                     playerState.SetState(RG_STATE.SPRINT);
+
+                Vector3 look = GameInstance.Instance.mbCamera.transform.forward;
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * transform.forward * (isSprint ? 1.5f : 1f), ForceMode.Acceleration);
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintForward" : "RunForward");
             }
             break;
             case Direction.BITMASK_BACKWARD:
             {
+                Vector3 look = GameInstance.Instance.mbCamera.transform.forward * (isAim ? 1f : -1f);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * transform.forward * (isAim ? 1f : -1f), ForceMode.Acceleration);
+
+                if (!isAir)
+                    animator.SetTrigger(isAim ? "RunBackward" : "RunForward");
             }
             break;
             case Direction.BITMASK_LEFT:
             {
+                Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : -GameInstance.Instance.mbCamera.transform.right);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * (isAim ? -transform.right : transform.forward) * (isSprint ? 1.5f : 1f));
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintLeft" : isAim ? "RunLeft" : "RunForward");
             }
             break;
             case Direction.BITMASK_RIGHT:
             {
+                Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : GameInstance.Instance.mbCamera.transform.right);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * (isAim ? transform.right : transform.forward) * (isSprint ? 1.5f : 1f));
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintRight" : isAim ? "RunRight" : "RunForward");
             }
             break;
             case Direction.BITMASK_FORWARDLEFT:
             {
+                if (Input.GetKeyDown(KeyCode.LeftControl))
+                    playerState.SetState(RG_STATE.SPRINT);
+
+                Vector3 dir = (GameInstance.Instance.mbCamera.transform.forward - GameInstance.Instance.mbCamera.transform.right).normalized;
+                Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : dir);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * (isAim ? dir : transform.forward) * (isSprint ? 1.5f : 1f));
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintLeft" : isAim ? "RunLeft" : "RunForward");
             }
             break;
             case Direction.BITMASK_FORWARDRIGHT:
             {
+                if (Input.GetKeyDown(KeyCode.LeftControl))
+                    playerState.SetState(RG_STATE.SPRINT);
+
+                Vector3 dir = (GameInstance.Instance.mbCamera.transform.forward + GameInstance.Instance.mbCamera.transform.right).normalized;
+                Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : dir);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * (isAim ? dir : transform.forward) * (isSprint ? 1.5f : 1f));
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintRight" : isAim ? "RunRight" : "RunForward");
             }
             break;
             case Direction.BITMASK_BACKWARDLEFT:
             {
+                Vector3 dir = (-GameInstance.Instance.mbCamera.transform.forward - GameInstance.Instance.mbCamera.transform.right).normalized;
+                Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : dir);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * (isAim ? dir : transform.forward));
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintLeft" : isAim ? "RunLeft" : "RunForward");
             }
             break;
             case Direction.BITMASK_BACKWARDRIGHT:
             {
+                Vector3 dir = (-GameInstance.Instance.mbCamera.transform.forward + GameInstance.Instance.mbCamera.transform.right).normalized;
+                Vector3 look = (isAim ? GameInstance.Instance.mbCamera.transform.forward : dir);
+                look.y = 0f;
+                Quaternion quat = Quaternion.FromToRotation(transform.forward, look);
+                targetRotation = quat * transform.rotation;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+                quat.ToAngleAxis(out float angle, out Vector3 axis);
+                GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * rotationSpeed);
+
+                rb.AddForce(moveSpeed * (isAim ? dir : transform.forward));
+
+                if (!isAir)
+                    animator.SetTrigger(isSprint ? "SprintRight" : isAim ? "RunRight" : "RunForward");
+            }
+            break;
+            default:
+            {
+                if (!isAir)
+                    animator.SetTrigger("Idle");
             }
             break;
         }
