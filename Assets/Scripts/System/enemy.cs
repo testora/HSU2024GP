@@ -32,7 +32,10 @@ public class enemy : MonoBehaviour
             curHealth -= 10;
 
             if (curHealth <= 0)
-                Destroy(gameObject);
+            {
+                gameObject.SetActive(false);
+                GameObject.Find("score").GetComponent<Score>().ScorePoint(10);
+            }
         }
     }
 }

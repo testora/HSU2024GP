@@ -41,6 +41,7 @@ public class BrotherController : MonoBehaviour
             animator.SetTrigger("Death");
             GameInstance.Instance.Mute();
             laser.SetActive(true);
+            GameObject.Find("score").GetComponent<Score>().ScorePoint(100);
         }
     }
 }
