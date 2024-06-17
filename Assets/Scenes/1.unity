@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4720,7 +4720,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0d0a6091476b3294e8b2c1352d95c41a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4806,12 +4806,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &1242717755 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5016743290671966916, guid: f5210eb5d4d66944d9cfb80c71bd6326,
-    type: 3}
-  m_PrefabInstance: {fileID: 1869449064}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1247348306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1507636620937791777, guid: 7097ba7ba649e1f41bba232312bdcbd8,
@@ -6591,11 +6585,6 @@ PrefabInstance:
         type: 3}
       propertyPath: firePos
       value: 
-      objectReference: {fileID: 1242717755}
-    - target: {fileID: 4289817120750971665, guid: f5210eb5d4d66944d9cfb80c71bd6326,
-        type: 3}
-      propertyPath: firePos
-      value: 
       objectReference: {fileID: 995964029140319888, guid: 0049a56714812a24b917ec6c9a47ec5f,
         type: 3}
     - target: {fileID: 4289817120750971665, guid: f5210eb5d4d66944d9cfb80c71bd6326,
@@ -6606,7 +6595,7 @@ PrefabInstance:
     - target: {fileID: 4289817120750971665, guid: f5210eb5d4d66944d9cfb80c71bd6326,
         type: 3}
       propertyPath: moveSpeed
-      value: 25
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4289817120750971665, guid: f5210eb5d4d66944d9cfb80c71bd6326,
         type: 3}
@@ -7285,5 +7274,4 @@ SceneRoots:
   - {fileID: 1669679102}
   - {fileID: 1905709207}
   - {fileID: 1869449064}
-  - {fileID: 51245302}
   - {fileID: 473561149}
