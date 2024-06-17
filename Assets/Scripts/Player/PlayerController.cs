@@ -47,6 +47,8 @@ public class PlayerController : MonoBehaviour
     private Quaternion targetRotation;
     private float rotationSpeed = 10f;
 
+    public List<AudioClip> clips = new List<AudioClip>();
+
     [SerializeField] Transform firePos;
     [SerializeField] Transform bulletTransform;
     [SerializeField] GameObject bulletPrefab;
@@ -89,6 +91,9 @@ public class PlayerController : MonoBehaviour
         bullet.gameObject.SetActive(true);
         bullet.transform.position = firePos.position;
         bullet.GetComponent<BulletController>().vector = GameInstance.Instance.mbCamera.transform.forward;
+
+        bullet.GetComponent<AudioSource>().clip = clips[UnityEngine.Random.Range(0, clips.Count)];
+        bullet.GetComponent<AudioSource>().Play();
     }
 
     void Update()
