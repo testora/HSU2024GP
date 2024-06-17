@@ -45,7 +45,7 @@ public class CameraController : MonoBehaviour
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         if (recoil)
-            mouseDelta.y -= EasingFunction.EaseInSine(0.25f, -0.25f, Utility.ProportionalRatio(timeAcc, 0f, 0.25f));
+            mouseDelta.y += EasingFunction.EaseInSine(0.5f, -0.5f, Utility.ProportionalRatio(timeAcc, 0f, 0.25f));
 
         float tilt = -mouseDelta.y * sensitivity * Time.deltaTime;
         float pitch = Mathf.Clamp(curPitch + tilt, minPitch, maxPitch);
@@ -67,7 +67,7 @@ public class CameraController : MonoBehaviour
         transform.RotateAround(parent.position, axis, angle);
     }
 
-    void Recoil()
+    public void Recoil()
     {
     //  StartCoroutine(Recoil(.5f));
         timeAcc = 0f;
