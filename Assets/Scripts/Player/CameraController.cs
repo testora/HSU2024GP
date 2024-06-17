@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CameraController : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class CameraController : MonoBehaviour
     private float maxPitch = 90f;
     private float curPitch = 0f;
     private float pivotDistance = 0f;
-    
+
+    float timeAcc = 0f;
+    bool recoil = false;
+
     void Awake()
     {
         if (hideCursor)
@@ -25,12 +29,23 @@ public class CameraController : MonoBehaviour
         pivotDistance = (parent.position - transform.position).magnitude;
     }
 
+    private void Update()
+    {
+        if (recoil && timeAcc < 0.25f)
+            timeAcc += Time.deltaTime;
+        if (timeAcc >= 0.25f)
+            recoil = false;
+    }
+
     void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.U))
             Recoil();
 
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+
+        if (recoil)
+            mouseDelta.y -= EasingFunction.EaseInSine(0.25f, -0.25f, Utility.ProportionalRatio(timeAcc, 0f, 0.25f));
 
         float tilt = -mouseDelta.y * sensitivity * Time.deltaTime;
         float pitch = Mathf.Clamp(curPitch + tilt, minPitch, maxPitch);
@@ -54,7 +69,9 @@ public class CameraController : MonoBehaviour
 
     void Recoil()
     {
-        StartCoroutine(Recoil(.25f));
+    //  StartCoroutine(Recoil(.5f));
+        timeAcc = 0f;
+        recoil = true;
     }
 
     IEnumerator Recoil(float duration)
@@ -62,7 +79,7 @@ public class CameraController : MonoBehaviour
         float endTime = Time.time + duration;
         while (Time.time < endTime)
         {
-            RotateAround(transform.right, Time.deltaTime * EasingFunction.Linear(-200f, 150f, Utility.ProportionalRatio(Time.time, endTime - duration, endTime)));
+            RotateAround(transform.right, Time.deltaTime * EasingFunction.EaseInSine(-100f, 200f, Utility.ProportionalRatio(Time.time, endTime - duration, endTime)));
             yield return null;
         }
     }
