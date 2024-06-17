@@ -47,6 +47,18 @@ public class PlayerController : MonoBehaviour
     private Quaternion targetRotation;
     private float rotationSpeed = 10f;
 
+    [SerializeField] Transform firePos;
+    [SerializeField] Transform bulletTransform;
+    [SerializeField] GameObject bulletPrefab;
+
+    GameObjectPool<BulletController> bulletPool;
+
+    public void RetrieveBullet(BulletController bullet)
+    {
+        bullet.gameObject.SetActive(false);
+        bulletPool.Set(bullet);
+    }
+
     void Start()
     {
         targetRotation = transform.rotation;
@@ -60,6 +72,23 @@ public class PlayerController : MonoBehaviour
 
         rb.inertiaTensor = rb.inertiaTensor;
         rb.inertiaTensorRotation = rb.inertiaTensorRotation;
+
+        bulletPool = new GameObjectPool<BulletController>(() =>
+        {
+            var obj = Instantiate(bulletPrefab, bulletTransform);
+            obj.SetActive(false);
+            var bullet = obj.GetComponent<BulletController>();
+            bullet.InitBullet(this);
+            return bullet;
+        }, 10);
+    }
+
+    void FireBullet()
+    {
+        var bullet = bulletPool.Get();
+        bullet.gameObject.SetActive(true);
+        bullet.transform.position = firePos.position;
+        bullet.GetComponent<BulletController>().vector = GameInstance.Instance.mbCamera.transform.forward;
     }
 
     void Update()
@@ -109,6 +138,25 @@ public class PlayerController : MonoBehaviour
         animator.SetLayerWeight(2, 2f * Mathf.Abs(0.5f - yaw));
         animator.Play(aimPitchState.fullPathHash, 1, pitch);
         animator.Play(aimYawState.fullPathHash, 2, yaw);
+
+        if (Input.GetMouseButton(0))
+        {
+            playerState.SetState(RG_STATE.AIM);
+        }
+        else
+        {
+            playerState.SetState(RG_STATE.AIM, false);
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            InvokeRepeating("FireBullet", 0f, .2f);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            CancelInvoke("FireBullet");
+        }
+
     }
 
     void Handle_KeyInput()

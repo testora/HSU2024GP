@@ -19,7 +19,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: secondary
   state: 0
   started: 0
   guid: befdf3fa8422bdc43aa2916c36dc5d9e
@@ -45,7 +45,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 20
   state: 0
   started: 0
   guid: 5faaf813cccdca549892a3e163b55639
@@ -72,7 +72,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: utility
   state: 0
   started: 0
   guid: 408838ed488d7e64daadf8f3a971bbff
@@ -98,7 +98,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 7.5
   state: 0
   started: 0
   guid: 5ba6890541f9ce349af53149f28cb638
@@ -123,7 +123,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 0111
   state: 0
   started: 0
   guid: b24b07dc94631894d8f0dc6f1f418dd5
@@ -153,7 +153,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: x>=10
   state: 0
   started: 0
   guid: 7de44a7aa4792094395f046c8e70a6b9
@@ -206,7 +206,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: duration:1sec
   state: 0
   started: 0
   guid: 4da886aa42afd4b46a7fbe98f9d2bb0d
@@ -234,7 +234,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: duration:1sec
   state: 0
   started: 0
   guid: e04736933d5c4694f8e05c6c3c31e989
@@ -262,7 +262,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 7.5
   state: 0
   started: 0
   guid: a37b5a363de5e6942b05dbb7e6c87b8b
@@ -312,7 +312,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 40
   state: 0
   started: 0
   guid: 28ce3b1aa6cab434c94418762b711e8d
@@ -395,11 +395,11 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 20
   state: 0
   started: 0
   guid: b3087dd9937e19b48b61a76bc341da81
-  position: {x: 300, y: 1662.8336}
+  position: {x: 300, y: 1651.3334}
   dashForce: 20
   forward: 1
   backward: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 20
   state: 0
   started: 0
   guid: 91a4a1d262d86c64caeee027169ba079
@@ -619,7 +619,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: duration:1sec
   state: 0
   started: 0
   guid: 7568aff64f88ab144915c6400f739cc4
@@ -695,7 +695,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: x>=7.5
   state: 0
   started: 0
   guid: 49e88d6fa0dc6db46843015b8a8fafdd
@@ -723,11 +723,11 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: dashsprintsmash
   state: 0
   started: 0
   guid: ca2c24ca744aa2a4fb73269869eb38e6
-  position: {x: 450, y: 1201.3334}
+  position: {x: 600.00006, y: 1201.3334}
   children:
   - {fileID: -8062797447264957509}
   - {fileID: -5312875413760865380}
@@ -750,7 +750,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: x<5
   state: 0
   started: 0
   guid: 1409fce837925074aa0301c8cf15a0f9
@@ -775,7 +775,13 @@ MonoBehaviour:
   treeState: 0
   blackboard:
     dynamicFields:
-    - variableName: NewVariable
+    - variableName: dashPower
+      type: 1
+      intValue: 0
+      floatValue: 20
+      stringValue: 
+      boolValue: 0
+    - variableName: NewVariable1
       type: 0
       intValue: 0
       floatValue: 0
@@ -853,11 +859,11 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 50
   state: 0
   started: 0
   guid: 8915cbeb6b208af489ce9a8017f2b31d
-  position: {x: 600, y: 1051.3334}
+  position: {x: 749.99994, y: 1051.3334}
   clip: {fileID: 8300000, guid: fb6814d393952ab498301bc2b220869d, type: 3}
   sprintForce: 50
 --- !u!114 &1506033318222752847
@@ -905,7 +911,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: x<1
   state: 0
   started: 0
   guid: c1df376ca2258fe43982620598afa1ee
@@ -983,7 +989,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 5
   state: 0
   started: 0
   guid: 6edc878ceb45c61469f1ee0141966aaa
@@ -1033,7 +1039,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: smash
   state: 0
   started: 0
   guid: 45ccb1d109ffad24fa693935a07afe28
@@ -1060,7 +1066,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: SprintSmash
   state: 0
   started: 0
   guid: f66d19c238e838247b8ab75f0ef653cb
@@ -1087,11 +1093,11 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: utility
   state: 0
   started: 0
   guid: 52b4effa3a6062d45bcfc5269a4a5867
-  position: {x: 449.99985, y: 1051.3334}
+  position: {x: 599.9998, y: 1051.3335}
   child: {fileID: -844577780159465012}
   selectedSkillName: UTILITY
 --- !u!114 &5648045447694483737
@@ -1113,7 +1119,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: utility
   state: 0
   started: 0
   guid: f65e56c34bde57447853d0159e6d72b1
@@ -1260,7 +1266,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: 5
   state: 0
   started: 0
   guid: 5b0fabf6b0c89b24b824c9862585fe50
@@ -1317,7 +1323,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: center
   state: 0
   started: 0
   guid: bb1842da0d303b540ab9864920850485
@@ -1342,7 +1348,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: dashsmash
   state: 0
   started: 0
   guid: 98b77e6f1d0098845af970357e8dcfe5
@@ -1369,7 +1375,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: duration:1sec
   state: 0
   started: 0
   guid: 092678ebb65779d4dbd98a534ccb4061
@@ -1397,7 +1403,7 @@ MonoBehaviour:
     skillController: {fileID: 0}
     audioSource: {fileID: 0}
     owner: {fileID: 0}
-  description: 
+  description: x<2.5
   state: 0
   started: 0
   guid: 1606ff3182855a54c8f1ca1131593047
