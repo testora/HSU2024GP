@@ -9,7 +9,6 @@ public class SmashNode : ActionNode
     private bool prepare = false;
 
     private Quaternion targetRotation;
-    private float rotationSpeed = 10f;
 
     protected override void OnStart()
     {

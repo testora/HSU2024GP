@@ -27,6 +27,9 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.U))
+            Recoil();
+
         Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         float tilt = -mouseDelta.y * sensitivity * Time.deltaTime;
@@ -47,5 +50,20 @@ public class CameraController : MonoBehaviour
     public void RotateAround(Vector3 axis, float angle)
     {
         transform.RotateAround(parent.position, axis, angle);
+    }
+
+    void Recoil()
+    {
+        StartCoroutine(Recoil(.25f));
+    }
+
+    IEnumerator Recoil(float duration)
+    {
+        float endTime = Time.time + duration;
+        while (Time.time < endTime)
+        {
+            RotateAround(transform.right, Time.deltaTime * EasingFunction.Linear(-200f, 150f, Utility.ProportionalRatio(Time.time, endTime - duration, endTime)));
+            yield return null;
+        }
     }
 }
