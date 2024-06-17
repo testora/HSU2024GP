@@ -17,15 +17,24 @@ public class BrotherController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 pos = transform.position;
+        pos.y = 0.6f;
+        transform.position = pos;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<BulletController>() != null)
+        if (collision.gameObject.tag == "bullet")
         {
             hp -= 1f;
-
             animator.SetTrigger("Flinch");
+        }
+
+        if (hp <= 0f)
+        {
+            Destroy(GetComponent<BehaviorTreeRunner>());
+            animator.SetTrigger("Death");
+            GameInstance.Instance.Mute();
         }
     }
 }
