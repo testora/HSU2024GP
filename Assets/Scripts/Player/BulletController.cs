@@ -85,6 +85,7 @@ public class BulletController : MonoBehaviour
         Vector3 diffusion = Utility.Diffusion(initVec, 15f * Mathf.Deg2Rad, 30f * Mathf.Deg2Rad);
         goalVec = initVec * 2f - diffusion;
         initVec = diffusion;
+        GetComponent<TrailRenderer>().Clear();
     }
 
     #region Public Methods
