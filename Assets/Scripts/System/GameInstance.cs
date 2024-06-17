@@ -21,6 +21,6 @@ public class GameInstance : SingletonMonoBehaviour<GameInstance>
 
     private void Start()
     {
-
+        GetComponent<AudioSource>().Play();
     }
 }
