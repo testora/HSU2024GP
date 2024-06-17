@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 [Flags]
@@ -39,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private uint bitDirection = 0;
     private PlayerState playerState;
 
+    public RawImage scope;
+
     Rigidbody rb;
     Animator animator;
     AnimatorStateInfo aimPitchState;
@@ -46,6 +49,15 @@ public class PlayerController : MonoBehaviour
 
     private Quaternion targetRotation;
     private float rotationSpeed = 10f;
+
+    private Quaternion aimTargetRotation;
+    private float aimRotationSpeed = 10f;
+
+    bool zoomIn = false;
+    bool zoomOut = false;
+    float zoomInInit = 60f;
+    float zoomOutInit = 6f;
+    float timeAcc = 0f;
 
     public List<AudioClip> clips = new List<AudioClip>();
 
@@ -83,17 +95,6 @@ public class PlayerController : MonoBehaviour
             bullet.InitBullet(this);
             return bullet;
         }, 10);
-    }
-
-    void FireBullet()
-    {
-        var bullet = bulletPool.Get();
-        bullet.gameObject.SetActive(true);
-        bullet.transform.position = firePos.position;
-        bullet.GetComponent<BulletController>().vector = GameInstance.Instance.mbCamera.transform.forward;
-
-        bullet.GetComponent<AudioSource>().clip = clips[UnityEngine.Random.Range(0, clips.Count)];
-        bullet.GetComponent<AudioSource>().Play();
     }
 
     void Update()
@@ -147,6 +148,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             playerState.SetState(RG_STATE.AIM);
+            camLook.y = 0f;
+
+            Quaternion quat = Quaternion.FromToRotation(transform.forward, camLook);
+            aimTargetRotation = quat * transform.rotation;
+            transform.rotation = Quaternion.Slerp(transform.rotation, aimTargetRotation, Time.deltaTime * aimRotationSpeed);
+            quat.ToAngleAxis(out float angle, out Vector3 axis);
+            GameInstance.Instance.camController.RotateAround(axis, -angle * Time.deltaTime * aimRotationSpeed); 
         }
         else
         {
@@ -162,6 +170,49 @@ public class PlayerController : MonoBehaviour
             CancelInvoke("FireBullet");
         }
 
+        if (Input.GetMouseButton(1))
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+
+            }
+        }
+
+        timeAcc += Time.deltaTime;
+        float time = Mathf.Clamp(timeAcc * 6f, 0f, 1f);
+        if (Input.GetMouseButtonDown(1))
+        {
+            timeAcc = 0f;
+            zoomIn = true;
+            zoomOut = false;
+            zoomInInit = GameInstance.Instance.mbCamera.GetComponent<Camera>().fieldOfView;
+        }
+        if (zoomIn)
+        {
+            GameInstance.Instance.mbCamera.GetComponent<Camera>().fieldOfView = EasingFunction.EaseOutCirc(zoomInInit, 6f, time);
+            GameInstance.Instance.camController.sensitivity = EasingFunction.Linear(500f, 50f, time);
+            scope.color = new Color(scope.color.r, scope.color.g, scope.color.b, EasingFunction.EaseOutCirc(0f, 1f, time));
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            timeAcc = 0f;
+            zoomIn = false;
+            zoomOut = true;
+            zoomOutInit = GameInstance.Instance.mbCamera.GetComponent<Camera>().fieldOfView;
+        }
+        if (zoomOut)
+        {
+            GameInstance.Instance.mbCamera.GetComponent<Camera>().fieldOfView = EasingFunction.EaseOutCirc(zoomOutInit, 60f, time);
+            GameInstance.Instance.camController.sensitivity = EasingFunction.Linear(50f, 500f, time);
+            scope.color = new Color(scope.color.r, scope.color.g, scope.color.b, EasingFunction.EaseOutCirc(1f, 0f, time));
+        }
+
+        if (time == 0f || time == 1f)
+        {
+            timeAcc = 0f;
+            zoomIn = false;
+            zoomOut = false;
+        }
     }
 
     void Handle_KeyInput()
@@ -338,5 +389,16 @@ public class PlayerController : MonoBehaviour
     public bool IsDirection(uint direction)
     {
         return (bitDirection & direction) != 0;
+    }
+
+    void FireBullet()
+    {
+        var bullet = bulletPool.Get();
+        bullet.gameObject.SetActive(true);
+        bullet.transform.position = firePos.position;
+        bullet.GetComponent<TrailRenderer>().Clear();
+
+        bullet.GetComponent<AudioSource>().clip = clips[UnityEngine.Random.Range(0, clips.Count)];
+        bullet.GetComponent<AudioSource>().Play();
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17581747, g: 0.22001377, b: 0.302343, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19146,9 +19146,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9a42e5c3d7cef4b8969668c893e57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 50
-  jumpPower: 20
-  clips: []
+  moveSpeed: 25
+  jumpPower: 40
+  clips:
+  - {fileID: 8300000, guid: 16a96ca17d313684f92fa864fbf334d0, type: 3}
+  - {fileID: 8300000, guid: 8f8d01821d238e04d8ec1e5d797e0c7b, type: 3}
+  - {fileID: 8300000, guid: af68dd1e078ecd447a900fa924d69ee9, type: 3}
+  - {fileID: 8300000, guid: d293ec96495bc2644a8bd87402eb8a76, type: 3}
+  - {fileID: 8300000, guid: 4ffa9e2ff9edf6144af5b8b329f7f3f6, type: 3}
+  - {fileID: 8300000, guid: dc03d0b014486744daa1a63d7b65e504, type: 3}
+  - {fileID: 8300000, guid: 05491c99c7013cd458e1fd269af4d2f5, type: 3}
+  - {fileID: 8300000, guid: 3edbcacb045dfe746b7b8a89b448a63f, type: 3}
   firePos: {fileID: 1809753695}
   bulletTransform: {fileID: 8547365128133205177, guid: 5201297e9933db64789cfe608d367f51,
     type: 3}
