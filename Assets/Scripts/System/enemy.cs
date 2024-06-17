@@ -9,13 +9,11 @@ public class enemy : MonoBehaviour
 
     Rigidbody rigid;
     SphereCollider sphereCollider;
-    Material mat;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
-        mat = GetComponent<SkinnedMeshRenderer>().material;
     }
 
 
@@ -29,18 +27,11 @@ public class enemy : MonoBehaviour
 
         IEnumerator onDamage()
         {
-            mat.color = Color.red;
             yield return new WaitForSeconds(0.1f);
 
-            if (curHealth > 0)
-            {
-                mat.color = Color.white;
-            }
-            else
-            {
-                mat.color = Color.gray;
+             if(curHealth == 0)
                 Destroy(gameObject, 2);
-            }
+            
         }
     }
 }
