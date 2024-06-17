@@ -15,8 +15,9 @@ public class enemy : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
-        mat = GetComponent<MeshRenderer>().material;
+        mat = GetComponent<SkinnedMeshRenderer>().material;
     }
+
 
      void OnTriggerEnter(Collider other)
     {
