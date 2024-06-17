@@ -102,7 +102,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -120,8 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b46a015db96f447a1d70bc20bf7189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vector: {x: 0, y: 0, z: 0}
-  speed: 10
+  speed: 25
   lifeTime: 1
 --- !u!96 &4617460805091324826
 TrailRenderer:
@@ -165,7 +164,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -240,7 +239,7 @@ TrailRenderer:
     textureScale: {x: 0.1, y: 0.1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
