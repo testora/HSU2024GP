@@ -17,7 +17,7 @@ public class Sceneload : MonoBehaviour
             SceneManager.LoadScene("3");
         }
 
-        else if (other.tag == "portal")
+        else if (other.tag == "gate")
         {
             SceneManager.LoadScene("Final");
         }

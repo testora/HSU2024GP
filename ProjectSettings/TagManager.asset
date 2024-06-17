@@ -8,6 +8,8 @@ TagManager:
   - shop
   - exit
   - gate
+  - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX
