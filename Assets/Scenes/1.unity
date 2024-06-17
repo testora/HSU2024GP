@@ -386,6 +386,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.404898, y: 10.177113, z: 13.362827}
   m_Center: {x: 0.09244943, y: 3.8487768, z: -0.48990488}
+--- !u!4 &42320109 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5016743290671966916, guid: f5210eb5d4d66944d9cfb80c71bd6326,
+    type: 3}
+  m_PrefabInstance: {fileID: 1869449064}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &45054524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7251548138589528552, guid: 1577a51f2ebf155438ad431e44edd054,
@@ -6692,8 +6698,7 @@ PrefabInstance:
         type: 3}
       propertyPath: firePos
       value: 
-      objectReference: {fileID: 995964029140319888, guid: 0049a56714812a24b917ec6c9a47ec5f,
-        type: 3}
+      objectReference: {fileID: 42320109}
     - target: {fileID: 4289817120750971665, guid: f5210eb5d4d66944d9cfb80c71bd6326,
         type: 3}
       propertyPath: jumpPower
