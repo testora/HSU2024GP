@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,14 +26,48 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
 
+    static int GetIndexOfMinValue(List<float> list)
+    {
+        int minIndex = 0;
+        float minValue = list[0];
+
+        for (int i = 1; i < list.Count; i++)
+        {
+            if (list[i] < minValue)
+            {
+                minValue = list[i];
+                minIndex = i;
+            }
+        }
+
+        return minIndex;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (GameInstance.Instance.mbBrother != null)
+        {
             goalVec = GameInstance.Instance.mbBrother.transform.position - transform.position;
+            goalVec.y += 0.5f;
+        }
+        else if (GameInstance.Instance.mbMonsters.Count != 0)
+        {
+            List<float> list = new List<float>();
+            for (int i = 0; i < GameInstance.Instance.mbMonsters.Count; ++i)
+            {
+                float dist = (GameInstance.Instance.mbMonsters[i].transform.position - transform.position).magnitude;
+                list.Add(dist);
+            }
+
+            int idx = GetIndexOfMinValue(list);
+            if (list[idx] <= 20f)
+                goalVec = GameInstance.Instance.mbMonsters[idx].transform.position - transform.position;
+
+            goalVec.y += 0.5f;
+        }
 
         timeAcc += Time.deltaTime;
         vector = Vector3.Lerp(initVec, goalVec, Utility.ProportionalRatio(timeAcc, 0f, lifeTime));

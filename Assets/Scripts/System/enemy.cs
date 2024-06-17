@@ -10,28 +10,29 @@ public class enemy : MonoBehaviour
     Rigidbody rigid;
     SphereCollider sphereCollider;
 
+    public GameObject a;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
     }
 
-
-     void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if(other.tag == "bullet")
+        if (curHealth != maxHealth)
+            Debug.Log(curHealth);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "bullet")
         {
+            Debug.Log(curHealth);
             curHealth -= 10;
-            StartCoroutine(onDamage());
-        }
 
-        IEnumerator onDamage()
-        {
-            yield return new WaitForSeconds(0.1f);
-
-             if(curHealth == 0)
-                Destroy(gameObject, 2);
-            
+            if (curHealth <= 0)
+                Destroy(gameObject);
         }
     }
 }
