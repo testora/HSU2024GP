@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        GetComponent<AudioSource>().Stop();
+
         targetRotation = transform.rotation;
 
         playerState = GetComponent<PlayerState>();
@@ -156,20 +158,23 @@ public class PlayerController : MonoBehaviour
             playerState.SetState(RG_STATE.AIM, false);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            InvokeRepeating("FireBullet", 0f, .2f);
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            CancelInvoke("FireBullet");
-        }
 
         if (Input.GetMouseButton(1))
         {
             if (Input.GetMouseButtonDown(0))
             {
-
+                GetComponent<AudioSource>().Play();
+            }
+        }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                InvokeRepeating("FireBullet", 0f, .2f);
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                CancelInvoke("FireBullet");
             }
         }
 
