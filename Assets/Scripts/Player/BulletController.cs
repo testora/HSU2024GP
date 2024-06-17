@@ -9,7 +9,7 @@ public class BulletController : MonoBehaviour
     public Vector3 vector = Vector3.zero;
 
     [SerializeField] float speed = 100f;
-    [SerializeField] float lifeTime = 1f;
+    [SerializeField] float lifeTime = 5f;
 
     int damage = 1;
     public int Damage { get { return damage; } }
