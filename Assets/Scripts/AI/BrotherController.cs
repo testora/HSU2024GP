@@ -9,6 +9,7 @@ public class BrotherController : MonoBehaviour
     public Slider hpSlider;
 
     Animator animator;
+    public GameObject laser;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class BrotherController : MonoBehaviour
             Destroy(GetComponent<BehaviorTreeRunner>());
             animator.SetTrigger("Death");
             GameInstance.Instance.Mute();
+            laser.SetActive(true);
         }
     }
 }
